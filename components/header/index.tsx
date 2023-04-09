@@ -1,8 +1,10 @@
 import Image from 'next/image';
-import logo from '../../assets/imgs/logo.svg';
+import logo from '../../public/imgs/logo.svg';
 import { FC, useState } from 'react';
 import CircledBtn from '../circledBtn';
-import MobileMenu from './mobileMenu';
+import MobileNav from './mobileMenu/index';
+import Link from 'next/link';
+import Nav from './nav';
 
 export type HeaderLinkType = {
   name: string
@@ -54,20 +56,30 @@ const Header: FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const handleMobileModalStatus = () => setIsMobileMenuOpen(prev => !prev);
 
-  return <header className='flex justify-between items-center'>
-    <Image
-      src={logo}
-      alt="Логотип"
-    />
+  return <header className='fixed top-0 left-1/2 -translate-x-1/2 max-w-[1220px] w-full flex justify-between items-center px-2.5 z-40'>
+    <Link href='/'>
+      <Image
+        src={logo}
+        alt="Логотип"
+      />
+    </Link>
     <CircledBtn
-      className='bg-black/60 text-esm text-white px-10 py-12 -mt-7 hover:bg-black/80'
+      className='text-small bg-black/60 w-[118px] h-[118px] text-white -mt-7 hover:bg-black/80 md:w-[160px] md:h-[160px] md:-mt-10 smlg:hidden'
       onClick={handleMobileModalStatus}
     >
       Меню
     </CircledBtn>
-    <MobileMenu
+    <Nav links={links} />
+    <CircledBtn
+      className='text-small bg-black/60 w-[160px] h-[160px] text-white -mt-10 hover:bg-black/80 max-smlg:hidden'
+      textClassName='smlg:mt-10'
+      onClick={handleMobileModalStatus}
+    >
+      Помочь выбрать
+    </CircledBtn>
+    <MobileNav
       isOpen={isMobileMenuOpen}
-      onClose={handleMobileModalStatus}
+      closeMenu={handleMobileModalStatus}
       links={links}
     />
   </header>

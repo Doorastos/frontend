@@ -1,5 +1,5 @@
+import Hero from '@/components/mainPageComponents/hero';
 import Head from 'next/head'
-import Link from 'next/link'
 
 const MainPage: React.FC = () => {
   return <>
@@ -10,7 +10,7 @@ const MainPage: React.FC = () => {
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <main>
-      
+      <Hero />
     </main>
   </>
 }
