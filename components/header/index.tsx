@@ -65,6 +65,7 @@ const Header: FC = () => {
     </Link>
     <CircledBtn
       className='text-small bg-black/60 w-[118px] h-[118px] text-white -mt-7 hover:bg-black/80 md:w-[160px] md:h-[160px] md:-mt-10 smlg:hidden'
+      textClassName='mt-8'
       onClick={handleMobileModalStatus}
     >
       Меню

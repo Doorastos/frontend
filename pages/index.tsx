@@ -1,4 +1,5 @@
 import Hero from '@/components/mainPageComponents/hero';
+import UniqueOffer from '@/components/mainPageComponents/uniqueOffer';
 import Head from 'next/head'
 
 const MainPage: React.FC = () => {
@@ -11,6 +12,7 @@ const MainPage: React.FC = () => {
     </Head>
     <main>
       <Hero />
+      <UniqueOffer />
     </main>
   </>
 }
