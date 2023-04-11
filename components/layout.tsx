@@ -49,7 +49,7 @@ const sfProDisplayFont = localFont({
 const Layout: FC<Props> = ({ children }) => {
   return (
     <div
-      className={cn('font-sfProDisplay mx-auto max-w-[1220px] px-2.5', robodronFont.variable, sfProDisplayFont.variable)}
+      className={cn('mainContainer font-sfProDisplay', robodronFont.variable, sfProDisplayFont.variable)}
     >
       <Header />
       {children}

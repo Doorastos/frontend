@@ -56,7 +56,7 @@ const Header: FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const handleMobileModalStatus = () => setIsMobileMenuOpen(prev => !prev);
 
-  return <header className='fixed top-0 left-1/2 -translate-x-1/2 max-w-[1220px] w-full flex justify-between items-center px-2.5 z-40'>
+  return <header className='mainContainer fixed top-0 left-1/2 -translate-x-1/2 w-full flex justify-between items-center z-40'>
     <Link href='/'>
       <Image
         src={logo}

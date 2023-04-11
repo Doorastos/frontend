@@ -7,7 +7,7 @@
     overflow-x: hidden;
   }
 	body {
-		@apply leading-[1.3] tracking-wide h-[2000vh];
+		@apply leading-[1.3] text-black tracking-wide h-[2000vh];
 	}
 	// text-[12px] leading-[1.3] font-light tracking-wide sm:text-[14px] md:text-[16px] lg:text-[18px]
 
@@ -40,13 +40,27 @@
 		@apply text-[10px] tracking-wider sm:text-[12px]
 	}
 
-	.mt130-200 {
-		@apply mt-32 esm:mt-36 smlg:mt-[200px]
+	.text20-30 {
+		@apply text-[20px] esm:text-[24px] md:text-[30px]
 	}
+	.text18-24 {
+		@apply text-[18px] md:text-[20px] smlg:text-[24px]
+	}
+	.text14 {
+		@apply text-[14px]
+	}
+
 	.mt130-300 {
 		@apply mt-32 esm:mt-[200px] md:mt-[300px]
 	}
+	.mt130-200 {
+		@apply mt-32 esm:mt-36 smlg:mt-[200px]
+	}
 	.mt50-150 {
 		@apply mt-12 md:mt-[150px]
+	}
+
+	.mainContainer {
+		@apply mx-auto max-w-[1220px] px-2.5 esm:px-5 esm:max-w-[1240px] md:px-8 md:max-w-[1264px] smlg:px-12 smlg:max-w-[1298px]
 	}
 }

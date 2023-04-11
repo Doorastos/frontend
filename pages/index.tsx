@@ -1,3 +1,6 @@
+import Advantages from '@/components/mainPageComponents/advantages';
+import CompanyName from '@/components/mainPageComponents/companyName';
+import ForWhat from '@/components/mainPageComponents/forWhat';
 import Hero from '@/components/mainPageComponents/hero';
 import UniqueOffer from '@/components/mainPageComponents/uniqueOffer';
 import Head from 'next/head'
@@ -13,6 +16,9 @@ const MainPage: React.FC = () => {
     <main>
       <Hero />
       <UniqueOffer />
+      <Advantages />
+      <CompanyName />
+      <ForWhat />
     </main>
   </>
 }

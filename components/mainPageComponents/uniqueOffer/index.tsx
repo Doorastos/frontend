@@ -1,12 +1,13 @@
 import { FC } from 'react';
 import PriceComponents from './priceComponents';
 import Offers from './offers';
+import SectionHeading from '@/components/sectionHeading';
 
 const UniqueOffer: FC = () => {
   return <section className='mt130-200'>
-    <p className='text-[14px] text-grey2'>Уникальное предложение</p>
+    <SectionHeading>Уникальное предложение</SectionHeading>
     <PriceComponents />
-    <Offers />
+    {/* <Offers /> */}
   </section>
 };
 
