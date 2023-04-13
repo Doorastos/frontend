@@ -21,7 +21,7 @@ const items = [
       src: forHouseImg,
       alt: 'Дом'
     },
-    className: '[&>div>p]:max-w-[23em] esm:gap-y-0 esm:flex-col-reverse esm:row-[1/4] esm:[&>img]:h-2/3 esm:[&>img]:max-w-[300px] esm:[&>img]:mb-auto md:[&>div>p]:max-w-[16.6em]',
+    className: '[&>div>p]:max-w-[23em] esm:gap-y-0 esm:flex-col-reverse esm:row-[1/4] esm:[&>img]:h-2/3 esm:[&>img]:max-w-[300px] esm:[&>img]:mb-auto',
   },
 ];
 

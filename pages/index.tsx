@@ -1,7 +1,9 @@
+import AdditionalSecurity from '@/components/mainPageComponents/additionalSecurity';
 import Advantages from '@/components/mainPageComponents/advantages';
 import CompanyName from '@/components/mainPageComponents/companyName';
 import ForWhat from '@/components/mainPageComponents/forWhat';
 import Hero from '@/components/mainPageComponents/hero';
+import QualityDifferences from '@/components/mainPageComponents/qualityDifferences';
 import UniqueOffer from '@/components/mainPageComponents/uniqueOffer';
 import Head from 'next/head'
 
@@ -19,6 +21,8 @@ const MainPage: React.FC = () => {
       <Advantages />
       <CompanyName />
       <ForWhat />
+      <QualityDifferences />
+      <AdditionalSecurity />
     </main>
   </>
 }

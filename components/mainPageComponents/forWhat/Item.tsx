@@ -15,7 +15,7 @@ const Item: FC<Props> = ({ heading, description, img, className }) => {
       <p className='text-esm text-grey1 mt-2.5'>{description}</p>
       <ArrowWithCircle className='text-blue1 mt-5' circleSize={30}>Перейти в каталог</ArrowWithCircle>
     </div>
-    <Image className='object-cover object-right w-full max-esm:h-[200px] esm:h-full esm:object-right-bottom' src={img.src} alt={img.alt} />
+    <Image className='h-auto object-cover object-right w-full max-esm:h-[200px] esm:h-full esm:object-right-bottom' src={img.src} alt={img.alt} priority />
   </div>
 };
 
