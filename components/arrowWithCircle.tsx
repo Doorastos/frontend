@@ -3,13 +3,13 @@ import cn from 'classnames';
 
 type Props = {
   children: ReactNode
-  circleSize: number
+  circleSize?: number
   className?: string
   circleClassName?: string
   signClassName?: string
 }
 
-const ArrowWithCircle: FC<Props> = ({ children, circleSize, className, circleClassName, signClassName }) => {
+const ArrowWithCircle: FC<Props> = ({ children, circleSize = 30, className, circleClassName, signClassName }) => {
   return <div className={cn('cursor-pointer w-fit', className)}>
     <p className={cn('text-esmLight', signClassName)}>{children}</p>
     <div className={cn('relative', circleClassName)} style={{ width: `calc(100% - ${circleSize / 2}px)` }}>

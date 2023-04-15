@@ -3,6 +3,8 @@ import { FC } from 'react';
 import img1 from '../../../public/imgs/pages/main/additionalSecurity/1.png';
 import img2 from '../../../public/imgs/pages/main/additionalSecurity/2.png';
 import img3 from '../../../public/imgs/pages/main/additionalSecurity/3.png';
+import Item, { AdditionalSecurityItemType } from './item';
+import useResize from '@/hooks/useResize';
 
 const items = [
   {
@@ -14,7 +16,8 @@ const items = [
       'Стандартно такие антисрезы устанавливаются в районе каждой петли, в количестве, соответствующем количеству петель, но при заказе двери можно обговорить установку дополнительных антисрезов — не обязательно только в районе петель. Ведь дверь делается под заказ и все зависит от пожелания заказчика.',
       'Установка штыревых антисрезов в районе каждой петли — входит во все входные двери и не оплачивается дополнительно.',
     ],
-    isExpandable: true
+    isExpandable: true,
+    className: '[&>div]:py-0 [&>div>img]:max-h-[250px] [&>div>img]:object-top [&>div>img]:object-cover max-md:[&>div>img]:w-full',
   },
   {
     img: img2,
@@ -36,9 +39,12 @@ const items = [
       'Данная конструкция является дополнительной системой безопасности, которую мы можем реализовать на любой входной двери, заказанной у нас — по Вашему желанию.',
     ]
   },
-];
+] as AdditionalSecurityItemType[];
 
 const AdditionalSecurity: FC = () => {
+  let windowWidth = useResize();
+  let Items = items.map((i, index) => <Item windowWidth={windowWidth} {...i} key={index} />);
+
   return <section className='mt130-300'>
     <SectionHeading>Дополнительная безопасность</SectionHeading>
     <div className='grid md:grid-cols-2 md:gap-x-7 smlg:gap-x-12'>
@@ -48,8 +54,8 @@ const AdditionalSecurity: FC = () => {
         <p className='max-w-[27em]'>Прочность конструкции выступает гарантией безопасности от взлома. Даже самые бюджетные варианты моделей в нашей компании имеют не низкий класс взломостойкости.</p>
       </div>
     </div>
-    <div>
-
+    <div className='mt50-150 flex flex-col gap-y-12 md:gap-y-[150px]'>
+      {Items}
     </div>
   </section>
 };
