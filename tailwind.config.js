@@ -21,8 +21,9 @@ module.exports = {
         'grey4': '#C7C7C7',
         'blue1': '#0222A5',
         'blue2': '#00197E',
-        'line': '#E6E6E6',
         'red': '#D62D30',
+        'line': '#E6E6E6',
+        'line2': '#B9B6B6',
       },
       boxShadow: {
         'common': '0px 4px 30px 9px rgba(2, 34, 165, 0.05)',

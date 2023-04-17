@@ -28,21 +28,22 @@ const Item: FC<Props> = ({ heading, img, subheading, description, isExpandable, 
     !isExpandable && setIsDescOpen(isLaptop)
   }, [isLaptop]);
 
-  return <div className={cn('group grid gap-y-5 md:grid-cols-2 md:gap-x-7', className)} data-state={isDescOpen ? 'open' : 'close'}>
-    <h5 className='md:group-even:text-left md:group-odd:text-right'>{heading}</h5>
+  return <div className={cn('group grid gap-y-5 md:grid-cols-[1fr_calc(50%)] md:gap-x-7 smlg:gap-x-12 lg:gap-x-24', className)} data-state={isDescOpen ? 'open' : 'close'}>
+    <h5 className='h-fit md:group-odd:text-right md:group-even:absolute md:group-even:left-1/2'>{heading}</h5>
     <div className='flex bg-grey3 max-h-[250px] py-5 md:group-even:col-[1] md:group-even:row-[1]'>
-      <Image className='h-full max-h-[210px] object-contain m-auto' src={img} alt={heading} />
+      <Image className='h-full object-contain m-auto max-md:max-h-[210px]' src={img} alt={heading} />
     </div>
-    <div className='flex flex-col gap-y-5 md:group-odd:col-[2]'>
+    <div className='flex flex-col gap-y-5 md:group-odd:col-[2] md:group-even:row-[1] md:group-even:mt-16 lg:group-even:mt-[5rem]'>
       <h6 className='text14-16 max-w-[31em]'>{subheading}</h6>
-      {(isExpandable && isLaptop) && <p className='text-esm text-grey1 font-light'>{description[0]}</p>}
-      <Texts className={cn(!isDescOpen && '-z-50')} data-open={isDescOpen} animate={{
+      {(isExpandable && isLaptop) && <p className='text-esm text-grey1 md:max-w-[30em]'>{description[0]}</p>}
+      <Texts className={cn('[&>p]:max-w-[30em]', !isDescOpen && '-z-50')} data-open={isDescOpen} animate={{
         height: !isDescOpen ? 0 : 'auto',
         opacity: !isDescOpen ? 0 : 1,
         marginTop: !isDescOpen ? '-20px' : 0,
       }}
         items={(isExpandable && isLaptop) ? description.slice(1) : description}
       />
+      <ArrowWithCircle className='h-fit mt-2.5 group-odd:hidden'>Узнать стоимость</ArrowWithCircle>
       {!(!isExpandable && isLaptop) &&
         <button className='flex items-center justify-between gap-x-5 w-fit transition-colors hover:text-blue1' onClick={handleDescStatus}>
           <span className='text14'>{isDescOpen ? 'Спрятать' : 'Подробнее'}</span>
@@ -50,7 +51,7 @@ const Item: FC<Props> = ({ heading, img, subheading, description, isExpandable, 
         </button>
       }
     </div>
-    {isLaptop && <ArrowWithCircle className='row-[2] col-[1]'>Узнать стоимость</ArrowWithCircle>}
+    {isLaptop && <ArrowWithCircle className='row-[2] col-[1] h-fit absolute right-[calc(50%_+_28px)] mt-48 group-even:hidden smlg:right-[calc(50%_+_48px)] lg:right-[calc(50%_+_100px)]'>Узнать стоимость</ArrowWithCircle>}
   </div>
 };
 

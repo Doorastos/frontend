@@ -65,6 +65,12 @@
 	.mt50-150 {
 		@apply mt-12 md:mt-[150px]
 	}
+	.mt40-50 {
+		@apply mt-10 md:mt-[50px]
+	}
+	.mt10-20 {
+		@apply mt-2.5 md:mt-5
+	}
 
 	.mainContainer {
 		@apply mx-auto max-w-[1220px] px-2.5 esm:px-5 esm:max-w-[1240px] md:px-8 md:max-w-[1264px] smlg:px-12 smlg:max-w-[1298px]

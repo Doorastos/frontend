@@ -5,6 +5,7 @@ import ForWhat from '@/components/mainPageComponents/forWhat';
 import Hero from '@/components/mainPageComponents/hero';
 import QualityDifferences from '@/components/mainPageComponents/qualityDifferences';
 import UniqueOffer from '@/components/mainPageComponents/uniqueOffer';
+import Reviews from '@/components/reviews';
 import Head from 'next/head'
 
 const MainPage: React.FC = () => {
@@ -23,6 +24,7 @@ const MainPage: React.FC = () => {
       <ForWhat />
       <QualityDifferences />
       <AdditionalSecurity />
+      <Reviews />
     </main>
   </>
 }

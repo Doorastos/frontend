@@ -1,16 +1,20 @@
-import { FC } from 'react';
+import { ButtonHTMLAttributes, DetailedHTMLProps, FC } from 'react';
 import cn from 'classnames';
 
 type Props = {
+  height: number
   className?: string
-}
+  chevronClassName?: string
+} & DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
 
-const ChevronRounded: FC<Props> = ({ className }) => {
-  return <div className={cn('rounded-full', className)}>
-    <svg width="25" height="48" viewBox="0 0 25 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0.922852 0.923096L23.9998 24L0.922852 47.0769" stroke="#FFFFFF" />
+const ChevronRounded: FC<Props> = ({ height, className, chevronClassName, ...props }) => {
+  let width = height / 2;
+
+  return <button className={cn('flex items-center justify-center rounded-full border transition-all border-blue1 hover:bg-blue1 active:bg-blue2 disabled:opacity-60 disabled:pointer-events-none', className)} {...props}>
+    <svg className={cn('transition-colors group-active:stroke-white', chevronClassName)} width={width} height={height} viewBox={`0 0 ${width} ${height}`} stroke='#0222A5' fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d={`M0.923828 0.922852L${width - .4} ${width}L0.923828 ${height}`} />
     </svg>
-  </div>
+  </button>
 };
 
 export default ChevronRounded;
