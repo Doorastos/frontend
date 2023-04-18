@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import bgMobile from '../../../public/imgs/pages/main/hero/bg_mobile.webp';
 import bgPc from '../../../public/imgs/pages/main/hero/bg_pc.webp';
-import ArrowWithCircle from '@/components/arrowWithCircle';
+import ArrowWithCircle from '@/components/arrowWithCircle/arrowWithCircle';
 import Advantage from './advantage';
 import ScreenBg from '@/components/screenBg';
 

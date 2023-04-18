@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { MainPageForWhatItemType } from '.';
 import Image from 'next/image';
-import ArrowWithCircle from '@/components/arrowWithCircle';
+import ArrowWithCircle from '@/components/arrowWithCircle/arrowWithCircle';
 import cn from 'classnames';
 
 type Props = {

@@ -6,7 +6,7 @@ import closeImg from '../../../public/imgs/close.svg';
 import Image from 'next/image';
 import Link from './link';
 import PopUpLink from './popUpLink';
-import ArrowWithCircle from '@/components/arrowWithCircle';
+import ArrowWithCircle from '@/components/arrowWithCircle/arrowWithCircle';
 
 type Props = {
   links: HeaderLinkType[]
@@ -41,7 +41,7 @@ const mobileMenu: FC<Props> = ({ links, isOpen, closeMenu }) => {
       <nav className='mt-7'>
         {Links}
       </nav>
-      <ArrowWithCircle className='text-blue1 mt-12' circleSize={30}>Помочь выбрать</ArrowWithCircle>
+      <ArrowWithCircle className='w-full text-blue1 mt-12' circleSize={30}>Помочь выбрать</ArrowWithCircle>
     </motion.div>
   </div>
 };

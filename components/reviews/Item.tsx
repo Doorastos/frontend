@@ -14,17 +14,15 @@ type Props = {
 }
 
 const Item: FC<Props> = ({ img, personName, review, setNewPage, windowWidth, currentPortion, portionsCount }) => {
-  console.log(currentPortion, portionsCount)
-  return <div className=''>
-    <div className='grid grid-cols-2'>
-      <Image src={img} alt='Дверь' width={500} height={600} />
-      <div className='flex gap-x-5 mt-auto ml-auto'>
-        <ChevronRounded className='group w-14 h-14' disabled={currentPortion === 0} chevronClassName='rotate-180 group-hover:stroke-white' onClick={() => setNewPage('prev')} height={18} />
-        <ChevronRounded className='group w-14 h-14' disabled={currentPortion === portionsCount - 1} chevronClassName='group-hover:stroke-white' onClick={() => setNewPage('next')} height={18} />
-      </div>
-      <Pagination className='max-md:mt-2.5' windowWidth={windowWidth} currentPortion={currentPortion} portionsCount={portionsCount} />
+
+  return <div className='grid grid-cols-2 md:grid-cols-[50%_1fr_1fr] md:grid-rows-[1fr_max-content] md:gap-x-7 smlg:gap-x-12 lg:grid-cols-[max-content_1fr_1fr]'>
+    <Image className='md:row-[1/3]' src={img} alt='Дверь' width={500} height={600} />
+    <div className='flex gap-x-5 mt-auto ml-auto md:col-[3]'>
+      <ChevronRounded className='w-14 h-14' disabled={currentPortion === 0} chevronClassName='rotate-180' onClick={() => setNewPage('prev')} height={18} />
+      <ChevronRounded className='w-14 h-14' disabled={currentPortion === portionsCount - 1} onClick={() => setNewPage('next')} height={18} />
     </div>
-    <div className='max-md:mt-5'>
+    <Pagination className='col-[1] row-[2] max-md:mt-2.5 md:col-[2] md:max-w-[190px]' windowWidth={windowWidth} currentPortion={currentPortion} portionsCount={portionsCount} />
+    <div className='col-[1/3] max-md:mt-5 md:col-[2/4] md:row-[1]'>
       <h6 className='text16-24'>{personName}</h6>
       <p className='mt10-20 text-esm text-grey2'>{review}</p>
     </div>

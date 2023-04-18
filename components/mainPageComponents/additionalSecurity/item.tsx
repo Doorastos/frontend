@@ -4,7 +4,7 @@ import { StaticImageData } from 'next/dist/client/image';
 import cn from 'classnames';
 import ArrowDown from '@/components/icons/ArrowDown';
 import Texts from '@/components/Texts';
-import ArrowWithCircle from '@/components/arrowWithCircle';
+import ArrowWithCircle from '@/components/arrowWithCircle/arrowWithCircle';
 
 export type AdditionalSecurityItemType = {
   img: StaticImageData
