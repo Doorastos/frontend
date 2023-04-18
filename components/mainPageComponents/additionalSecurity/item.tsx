@@ -26,7 +26,7 @@ const Item: FC<Props> = ({ heading, img, subheading, description, isExpandable, 
 
   useEffect(() => {
     !isExpandable && setIsDescOpen(isLaptop)
-  }, [isLaptop]);
+  }, [isLaptop, isExpandable]);
 
   return <div className={cn('group grid gap-y-5 md:grid-cols-[1fr_calc(50%)] md:gap-x-7 smlg:gap-x-12 lg:gap-x-24', className)} data-state={isDescOpen ? 'open' : 'close'}>
     <h5 className='h-fit md:group-odd:text-right md:group-even:absolute md:group-even:left-1/2'>{heading}</h5>

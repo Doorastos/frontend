@@ -2,12 +2,12 @@ import { ButtonHTMLAttributes, DetailedHTMLProps, FC } from 'react';
 import cn from 'classnames';
 
 type Props = {
-  height: number
+  height?: number
   className?: string
   chevronClassName?: string
 } & DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
 
-const ChevronRounded: FC<Props> = ({ height, className, chevronClassName, ...props }) => {
+const ChevronRounded: FC<Props> = ({ height = 30, className, chevronClassName, ...props }) => {
   let width = height / 2;
 
   return <button
