@@ -24,8 +24,6 @@ const ArrowWithCircle: FC<Props> = ({ children, circleSize = 30, className, circ
       />
       <ChevronRounded className='ml-auto group-hover:[&>svg]:stroke-blue1' height={8} style={{ width: circleSize, height: circleSize }} />
     </div>
-    {/* <div className={cn('relative', circleClassName)} style={{ width: `calc(100% - ${circleSize / 2}px)` }}> */}
-    {/* </div> */}
   </div>
 };
 
