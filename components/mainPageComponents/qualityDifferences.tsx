@@ -5,73 +5,73 @@ import { FC } from 'react';
 
 const accordionItems = [
   {
-    heading: 'Цена',
-    content: 'Двери китайского производства значительно дешевле по стоимости конструкциям, изготовленным в России. Но так же, как и цена, качество китайских дверей значительно ниже.',
+    heading: 'Price',
+    content: 'Chinese-made doors are much cheaper than Russian-made doors. But just like the price, the quality of Chinese doors is much lower.',
   },
   {
-    heading: 'Толщина металла и вес двери',
+    heading: 'Metal thickness and door weight',
     content: [
-      'Качественная металлическая дверь не может иметь легкий вес. Конструкции российского производства весьма тяжелые, их вес всегда превышает 50 кг. Толщина металла – не менее 1.5 мм.',
-      'Двери от КНР довольно легкие и тонкие. Их вес часто не превышает 20-30 кг, а толщина металлического листа едва дотягивает до 0.5 мм. При нажатии полотно прогибается и пружинится.',
+      'A quality metal door cannot be light weight. Russian-made structures are very heavy, their weight always exceeds 50 kg. Metal thickness – not less than 1.5 mm.',
+      'Doors from China are quite light and thin. Their weight often does not exceed 20-30 kg, and the thickness of the metal sheet barely reaches 0.5 mm. When pressed, the canvas flexes and springs.',
     ],
   },
   {
-    heading: 'Размеры',
-    content: 'Китайские производители выпускают двери стандартных размеров. У отечественного производителя можно приобрести конструкцию любых размеров для установки в дома и квартиры с разными параметрами дверного проема.',
+    heading: 'Dimensions',
+    content: 'Chinese manufacturers produce doors in standard sizes. From a domestic manufacturer, you can purchase a structure of any size for installation in houses and apartments with different doorway parameters.',
   },
   {
-    heading: 'Надежность запорных устройств',
-    content: 'В конструкциях от КНР установлены дешевые замки из силумина и других ненадежных материалов. Производители РФ выбирают для оснащения входной двери качественные запорные механизмы из высокопрочной латуни или стали.',
+    heading: 'Reliability of locking devices',
+    content: 'Cheap locks made of silumin and other unreliable materials are installed in Chinese constructions. Manufacturers of the Russian Federation choose high-quality locking mechanisms made of high-strength brass or steel to equip the front door.',
   },
   {
-    heading: 'Фурнитура',
+    heading: 'Fittings',
     content: [
-      'Фурнитура китайских дверей быстро приходит в негодность и теряет привлекательный вид.',
-      'Российские производители не экономят на столь важных элементах оснащения и комплектуют металлические двери качественной фурнитурой с длительной и функциональной работоспособностью.',
+      'Chinese door fittings quickly become unusable and lose their attractive appearance.',
+      'Russian manufacturers do not save on such important elements of equipment and complete metal doors with high-quality fittings with long-term and functional performance.',
     ],
   },
   {
-    heading: 'Наполнение дверей',
+    heading: 'Filling doors',
     content: [
-      'Двери отечественного производства заполняются сертифицированными материалами, прошедшими все необходимые испытательные тесты. Чаще всего используется вспененный полиуретан, базальт или минеральная плита. Эти материалы не пропускают внутрь дома холодный ветер, влагу и шум, обеспечивая надежную защиту.',
-      'Китайские аналоги часто оказываются «пустотелыми» и в качестве наполнителя можно рассчитывать только на гофрокартон, уложенный недостаточно плотно. Все недостатки этого материала можно заметно ощутить в холодный сезон года. Дверь не защищает от сквозняков и морозов, пропускает холодный воздух в дом и посторонний шум с улицы.',
+      'The doors of domestic production are filled with certified materials that have passed all the necessary test tests. The most commonly used foamed polyurethane, basalt or mineral plate. These materials do not allow cold wind, moisture and noise to enter the house, providing reliable protection.',
+      'Chinese counterparts often turn out to be "hollow" and as a filler, you can only count on corrugated cardboard, which is not packed tightly enough. All the shortcomings of this material can be noticeably felt in the cold season of the year. The door does not protect against drafts and frost, it lets cold air into the house and extraneous noise from the street.',
     ],
   },
   {
-    heading: 'Дизайн и отделка',
+    heading: 'Design & Finish',
     content: [
-      'Двери китайского производства имеют вполне привлекательный дизайн, но если внимательно присмотреться к полотну, то можно заметить некачественно наложенный рисунок, созданный тонкой полимерной пленкой. При эксплуатации такая дверь быстро теряет привлекательные данные. К тому же, дизайн всех дверей типичен и не уникален.',
-      'Производители из России выбирают в качестве отделки материалы достойного качества, обладающие устойчивостью к различным воздействиям. Они создают готовому изделию презентабельный внешний вид. Покупатель может выбрать красивое полотно с декоративными элементами из хромированного металла, стекла, зеркальной поверхности или резьбой на деревянной основе. Выбор дизайнерских решений очень большой!',
+      'Chinese-made doors have a quite attractive design, but if you look closely at the door leaf, you can see a poor-quality superimposed pattern created by a thin polymer film. During operation, such a door quickly loses attractive data. In addition, the design of all doors is typical and not unique.',
+      'Manufacturers from Russia choose materials of decent quality as finishes, which are resistant to various influences. They create a presentable appearance for the finished product. The buyer can choose a beautiful canvas with decorative elements made of chromed metal, glass, a mirror surface or carvings on a wooden base. The choice of design solutions is very large!',
     ],
   },
   {
-    heading: 'Срок эксплуатации',
+    heading: 'Lifetime',
     content: [
-      'Китайские двери характеризуются низким качеством. Соответственно, срок эксплуатации таких конструкций небольшой. Многие называют металлические двери из КНР одноразовыми, что вполне соответствует действительности.',
-      'Добротные металлические двери из РФ прослужат несколько десятков лет, и даже спустя годы не потеряют своих эксплуатационных качеств. Многие граждане меняют такие двери на новые конструкции, только чтобы сменить уже поднадоевший дизайн, а старые двери, не утратившие вид и свои защитные качества, переустанавливают в другие помещения.',
+      'Chinese doors are of poor quality. Accordingly, the service life of such structures is short. Many people call metal doors from China disposable, which is quite true.',
+      'Sturdy metal doors from the Russian Federation will last for several decades, and even years later they will not lose their performance. Many citizens change such doors to new designs, only to change the already bored design, and the old doors, which have not lost their appearance and their protective qualities, are reinstalled in other rooms.',
     ],
   },
   {
-    heading: 'Как быстро распознать китайскую дверь',
-    content: ';Двери китайского производства значительно дешевле по стоимости конструкциям, изготовленным в России. Но так же, как и цена, качество китайских дверей значительно ниже.',
+    heading: 'How to Quickly Recognize a Chinese Door',
+    content: ';Doors made in China are much cheaper than structures made in Russia. But just like the price, the quality of Chinese doors is much lower.',
   },
   {
-    heading: 'Вывод',
+    heading: 'Conclusion',
     content: [
-      'Китайские двери не способы защитить дом даже от сквозняков, поэтому рассчитывать на защиту дома от взлома и проникновения воров даже не стоит. Такие двери можно установить в офисе, расположенном на отапливаемом этаже высотного здания, где работает охранная служба. Устанавливать некачественные двери в жилых домах – весьма неразумное решение.',
-      'Не стоит экономить деньги на покупке столь важной конструкции, основной функцией которой является защита дома. Лучше один раз потратиться, но зато приобрести высококачественную входную металлическую дверь, которая безупречно справится с поставленными задачами и прослужит ни один десяток лет. Выбрать надежную стальную дверь отечественного производителя можно на нашем сайте.'
+      'Chinese doors are not a way to protect the house even from drafts, so you should not even count on protecting the house from breaking and entering thieves. Such doors can be installed in an office located on the heated floor of a high-rise building where a security service operates. Installing low-quality doors in residential buildings is a very unwise decision.',
+      'It is not worth saving money on the purchase of such an important structure, the main function of which is to protect the house. It is better to spend money once, but to purchase a high-quality metal entrance door that will perfectly cope with the tasks set and will last for a dozen years. You can choose a reliable steel door of a domestic manufacturer on our website.'
     ],
   },
 ] as AccordionItemType[];
 
 const QualityDifferences: FC = () => {
   return <section className='mt130-300 overflow-x-hidden'>
-    <SectionHeading>Отличие Expert от китайских дверей</SectionHeading>
+    <SectionHeading>The difference between Expert and Chinese doors</SectionHeading>
     <div className='grid md:grid-cols-2 md:gap-x-7 smlg:gap-x-12'>
-      <h5 className='text16-24 max-w-[20em] md:max-w-[23em]'>Сэкономить и купить дешевую дверь китайского производства или приобрести добротную конструкцию от российского производителя.</h5>
+      <h5 className='text16-24 max-w-[20em] md:max-w-[23em]'>Save money and buy a cheap Chinese-made door or purchase a solid design from a Russian manufacturer.</h5>
       <div className='text-esm flex flex-col gap-y-2.5 max-md:mt-5'>
-        <p className='max-w-[23em]'>Чтобы сделать правильный выбор, нужно изучить особенности дверей от КНР и РФ.</p>
-        <p className='max-w-[28.3em]'>Мы рассмотрим, в чем различие дверей, сделанных в Китае и в России, на что важно обратить внимание при выборе двери, какие проблемы могут возникнуть с китайской входной дверью</p>
+        <p className='max-w-[23em]'>To make the right choice, you need to study the features of doors from China and the Russian Federation.</p>
+        <p className='max-w-[28.3em]'>We will consider what is the difference between doors made in China and in Russia, what is important to pay attention to when choosing a door, what problems can arise with a Chinese front door</p>
       </div>
     </div>
     <Accordion className='mt-10 md:max-w-[calc(50%_-_14px)] md:ml-auto md:mt-5 smlg:max-w-[calc(50%_-_24px)]' items={accordionItems} />

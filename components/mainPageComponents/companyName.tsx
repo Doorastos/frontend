@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const CompanyName: FC = () => {
   return <section className='mt130-300'>
-    <Image className='w-full min-h-[28px]' src={companyNameImg} alt='эксперт' width={1245} height={113} />
+    <Image className='w-full min-h-[28px]' src={companyNameImg} alt='Expert' width={1245} height={113} />
   </section>
 };
 

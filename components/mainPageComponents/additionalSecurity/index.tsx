@@ -9,35 +9,35 @@ import useResize from '@/hooks/useResize';
 const items = [
   {
     img: img1,
-    heading: 'Штыревой антисрез',
-    subheading: 'Штыревой антисрез — это дополнительная система защиты двери, которая не позволяет вскрыть дверь со стороны петель если злоумышленник их срежет.',
+    heading: 'Pin anti-cut',
+    subheading: 'An anti-shear pin is an additional door protection system that prevents the door from being opened from the hinge side if an intruder cuts it off.',
     description: [
-      'При закрытой двери — штырь входит в отверстие в лутке и, если петли будут срезаны — не даст злоумышленнику получить доступ в квартиру (дом), так как у него не будет возможности отогнуть дверь.',
-      'Стандартно такие антисрезы устанавливаются в районе каждой петли, в количестве, соответствующем количеству петель, но при заказе двери можно обговорить установку дополнительных антисрезов — не обязательно только в районе петель. Ведь дверь делается под заказ и все зависит от пожелания заказчика.',
-      'Установка штыревых антисрезов в районе каждой петли — входит во все входные двери и не оплачивается дополнительно.',
+      'When the door is closed - the pin enters the hole in the loot and, if the hinges are cut off, it will not allow the attacker to gain access to the apartment (house), since he will not be able to bend the door.',
+      'As a standard, such anti-cuts are installed in the region of each hinge, in an amount corresponding to the number of hinges, but when ordering a door, you can discuss the installation of additional anti-cuts - not necessarily only in the hinge area. After all, the door is made to order and it all depends on the wishes of the customer.',
+      'Installation of pin anti-cuts in the area of each hinge is included in all entrance doors and is not paid extra.',
     ],
     isExpandable: true,
-    className: '[&>div:nth-child(2)]:py-0 [&>div:nth-child(2)>img]:max-h-[250px] [&>div:nth-child(2)>img]:object-top [&>div:nth-child(2)>img]:object-cover max-md:[&>div:nth-child(2)>img]:w-full md:[&>div:nth-child(2)]:max-h-none md:[&>div:nth-child(2)>img]:max-h-none',
+    className: '[&>div:nth-child(2)]:py-0 [&>div:nth-child(2)>img]:max-h-[250px] [&>div:nth-child( 2)>img]:object-top [&>div:nth-child(2)>img]:object-cover max-md:[&>div:nth-child(2)>img]:w-full md :[&>div:nth-child(2)]:max-h-none md:[&>div:nth-child(2)>img]:max-h-none',
   },
   {
-    img: img2,
-    heading: 'Система антивор',
-    subheading: 'Система антивор — дополнительная опция безопасности входной двери. Злоумышленник не сможет тихо что-то сделать с такой дверью.',
+    img:img2,
+    heading: 'Anti-Theft System',
+    subheading: 'Anti-theft system is an additional security option for the front door. An intruder will not be able to quietly do something with such a door.',
     description: [
-      'Дополнительные ребра жесткости. Дополнительная защита замков с двух сторон листами металла толщиной 3 мм.',
-      'Согнуть, отогнуть, тихо «подковырнуть» и т.д. — никак нельзя.',
-      'Данная конструкция является дополнительной системой безопасности, которую мы можем реализовать на любой входной двери, заказанной у нас — по Вашему желанию.',
+      'Additional stiffeners. Additional protection of locks on both sides with metal sheets 3 mm thick.',
+      'Bend, bend, quietly "tuck", etc. - no way.',
+      'This design is an additional security system that we can implement on any front door ordered from us - at your request.',
     ],
     className: 'md:[&>div:nth-child(2)]:min-h-[480px] md:[&>div:nth-child(2)]:min-h-[600px]'
   },
   {
-    img: img3,
-    heading: 'Дополнительная защита примыкания',
-    subheading: 'Дополнительная защита примыкания — дополнительная опция безопасности входной двери.',
+    img:img3,
+    heading: 'Additional abutment protection',
+    subheading: 'Supplementary heading protection - an additional security option for the front door.',
     description: [
-      'Со стороны притвора двери наваривается «квадрат», который не позволит злоумышленнику заложить лом или фомку между луткой и дверью, чтобы отогнуть ее. На фото этот «квадрат» обозначен красным цветом. Также существуют вариации с защитой по всему периметру двери с использованием полосы.',
-      'При установке двери полоса прячется под наличник, визуально не обнаруживается и не портит вид двери. Тихо подобраться к замку с такой дополнительной защитой попросту не удастся.',
-      'Данная конструкция является дополнительной системой безопасности, которую мы можем реализовать на любой входной двери, заказанной у нас — по Вашему желанию.',
+      'A "square" is welded from the side of the door porch, which will not allow an attacker to lay a crowbar or crowbar between the slat and the door in order to bend it. In the photo, this "square" is marked in red. There are also variations with protection around the entire perimeter of the door using a strip.',
+      'When installing the door, the strip is hidden under the casing, is not visually detected and does not spoil the appearance of the door. It\'s impossible to get close to the castle quietly with this extra protection.',
+      'This design is an additional security system that we can implement on any front door ordered from us - at your request.',
     ],
     className: 'md:[&>div:nth-child(2)]:min-h-[300px] md:[&>div:nth-child(2)]:min-h-[400px]'
   },
@@ -48,12 +48,12 @@ const AdditionalSecurity: FC = () => {
   let Items = items.map((i, index) => <Item windowWidth={windowWidth} {...i} key={index} />);
 
   return <section className='mt130-300'>
-    <SectionHeading>Дополнительная безопасность</SectionHeading>
+    <SectionHeading>Additional security</SectionHeading>
     <div className='grid md:grid-cols-2 md:gap-x-7 smlg:gap-x-12'>
-      <h5 className='text16-24 max-w-[20em]'>Кражи квартир на сегодня занимают лидирующее положение среди преступности во многих городах страны.</h5>
+      <h5 className='text16-24 max-w-[20em]'>Thefts of apartments today occupy a leading position among crime in many cities of the country.</h5>
       <div className='text-esm flex flex-col gap-y-2.5 max-md:mt-5'>
-        <p className='max-w-[23em]'>Чтобы максимально обезопасить вас, мы предлагаем надежные конструкции с дополнительным функционалом.</p>
-        <p className='max-w-[27em]'>Прочность конструкции выступает гарантией безопасности от взлома. Даже самые бюджетные варианты моделей в нашей компании имеют не низкий класс взломостойкости.</p>
+        <p className='max-w-[23em]'>In order to protect you as much as possible, we offer reliable designs with additional functionality.</p>
+        <p className='max-w-[27em]'>The strength of the structure acts as a guarantee of security against burglary. Even the most budgetary variants of models in our company have a high class of burglary resistance.</p>
       </div>
     </div>
     <div className='mt50-150 flex flex-col gap-y-12 md:gap-y-[150px]'>

@@ -8,47 +8,38 @@ import Nav from './nav';
 
 export type HeaderLinkType = {
   name: string
-  href?: string
   sublinks?: Omit<HeaderLinkType, 'sublinks'>[]
 };
 
 const links = [
   {
-    name: 'Каталог',
-    href: 'catalog',
+    name: 'Catalog',
   },
   {
-    name: 'Сервис',
+    name: 'Service',
     sublinks: [
       {
-        name: 'Как выбрать двери',
-        href: 'howToChooseDoors',
+        name: 'How to choose doors',
       },
       {
-        name: 'Доставка и установка',
-        href: 'deliveryAndInstallation',
+        name: 'Delivery and installation',
       },
       {
-        name: 'Порядок оплаты',
-        href: 'paymentOrder',
+        name: 'Payment order',
       },
       {
-        name: 'Гарантии',
-        href: 'guarantees',
+        name: 'Guarantees',
       },
     ],
   },
   {
-    name: 'Акции',
-    href: 'stock',
+    name: 'Stock',
   },
   {
-    name: 'О производстве',
-    href: 'aboutProduction',
+    name: 'About production',
   },
   {
-    name: 'Контакты',
-    href: 'contacts',
+    name: 'Contacts',
   },
 ];
 
@@ -60,7 +51,7 @@ const Header: FC = () => {
     <Link href='/'>
       <Image
         src={logo}
-        alt="Логотип"
+        alt="Logo"
       />
     </Link>
     <CircledBtn
@@ -68,7 +59,7 @@ const Header: FC = () => {
       textClassName='mt-8'
       onClick={handleMobileModalStatus}
     >
-      Меню
+      Menu
     </CircledBtn>
     <Nav links={links} />
     <CircledBtn
@@ -76,7 +67,7 @@ const Header: FC = () => {
       textClassName='smlg:mt-10'
       onClick={handleMobileModalStatus}
     >
-      Помочь выбрать
+      Help choose
     </CircledBtn>
     <MobileNav
       isOpen={isMobileMenuOpen}

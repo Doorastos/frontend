@@ -5,7 +5,7 @@ import SectionHeading from '@/components/sectionHeading';
 
 const UniqueOffer: FC = () => {
   return <section className='mt130-200'>
-    <SectionHeading>Уникальное предложение</SectionHeading>
+    <SectionHeading>Unique offers</SectionHeading>
     <PriceComponents />
     {/* <Offers /> */}
   </section>

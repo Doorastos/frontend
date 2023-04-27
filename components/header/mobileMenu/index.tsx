@@ -7,6 +7,7 @@ import Image from 'next/image';
 import Link from './link';
 import PopUpLink from './popUpLink';
 import ArrowWithCircle from '@/components/arrowWithCircle/arrowWithCircle';
+import textToURL from '@/helpers/textToURL';
 
 type Props = {
   links: HeaderLinkType[]
@@ -15,7 +16,7 @@ type Props = {
 }
 
 const mobileMenu: FC<Props> = ({ links, isOpen, closeMenu }) => {
-  let Links = links.map((l, index) => l.href !== undefined ? <Link className='mt-4' onClick={closeMenu} {...l} key={index} /> : <PopUpLink onClick={closeMenu} {...l} key={index} />);
+  let Links = links.map((l, index) => textToURL(l.name) !== undefined ? <Link className='mt-4' onClick={closeMenu} {...l} key={index} /> : <PopUpLink onClick={closeMenu} {...l} key={index} />);
 
   return <div
     className={cn(
@@ -37,11 +38,11 @@ const mobileMenu: FC<Props> = ({ links, isOpen, closeMenu }) => {
       }}
       initial={false}
     >
-      <Image className='ml-auto' src={closeImg} alt='Закрыть' onClick={closeMenu} role='button' />
+      <Image className='ml-auto' src={closeImg} alt='Close' onClick={closeMenu} role='button' />
       <nav className='mt-7'>
         {Links}
       </nav>
-      <ArrowWithCircle className='w-full text-blue1 mt-12' circleSize={30}>Помочь выбрать</ArrowWithCircle>
+      <ArrowWithCircle className='w-full text-blue1 mt-12' circleSize={30}>Help choose</ArrowWithCircle>
     </motion.div>
   </div>
 };

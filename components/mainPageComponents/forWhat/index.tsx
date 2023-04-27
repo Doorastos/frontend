@@ -6,20 +6,20 @@ import { StaticImageData } from 'next/image';
 
 const items = [
   {
-    heading: 'Для квартиры',
-    description: 'Стильные решения для тех, кто предпочетает жить в городе',
+    heading: 'For an apartment',
+    description: 'Stylish solutions for those who prefer to live in the city',
     img: {
       src: forApartmentImg,
-      alt: 'Квартира'
+      alt: 'Apartment'
     },
     className: '[&>div>p]:max-w-[16.75em] esm:col-[2] esm:row-[1/3] esm:[&>img]:min-h-[320px] esm:[&>img]:max-w-[600px] md:[&>div>p]:max-w-[16.6em]',
   },
   {
-    heading: 'Для дома',
-    description: 'Теплые двери с терморазрывом, созданы чтобы согревать и радовать эстетикой',
+    heading: 'For home',
+    description: 'Warm doors with a thermal break, designed to warm and delight with aesthetics',
     img: {
       src: forHouseImg,
-      alt: 'Дом'
+      alt: 'House',
     },
     className: '[&>div>p]:max-w-[23em] esm:gap-y-0 esm:flex-col-reverse esm:row-[1/4] esm:[&>img]:h-2/3 esm:[&>img]:max-w-[300px] esm:[&>img]:mb-auto',
   },

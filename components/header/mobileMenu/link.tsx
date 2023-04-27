@@ -2,17 +2,18 @@ import { FC } from 'react';
 import { HeaderLinkType } from '..';
 import NavLink from '@/components/navLink';
 import cn from 'classnames';
+import textToURL from '@/helpers/textToURL';
 
 type Props = {
   className?: string
   onClick?: () => void
 } & HeaderLinkType
 
-const Link: FC<Props> = ({ name, href, className, onClick }) => {
+const Link: FC<Props> = ({ name, className, onClick }) => {
   return <NavLink
     className={cn('group block text-grey1 mt-4 first-child:mt-0 sm:text-[18px] md:text-[20px]', className)}
     activeClassName='[&>span]:bg-black'
-    href={href || ''}
+    href={textToURL(name) || ''}
     onClick={onClick}
   >
     <p>{name}</p>

@@ -43,15 +43,15 @@ const Item: FC<Props> = ({ heading, img, subheading, description, isExpandable, 
       }}
         items={(isExpandable && isLaptop) ? description.slice(1) : description}
       />
-      <ArrowWithCircle className='h-fit mt-2.5 group-odd:hidden'>Узнать стоимость</ArrowWithCircle>
+      <ArrowWithCircle className='h-fit mt-2.5 group-odd:hidden'>Find out the cost</ArrowWithCircle>
       {!(!isExpandable && isLaptop) &&
         <button className='flex items-center justify-between gap-x-5 w-fit transition-colors hover:text-blue1' onClick={handleDescStatus}>
-          <span className='text14'>{isDescOpen ? 'Спрятать' : 'Подробнее'}</span>
+          <span className='text14'>{isDescOpen ? 'Hide' : 'More'}</span>
           <ArrowDown className='h-[12px] mt-1' />
         </button>
       }
     </div>
-    {isLaptop && <ArrowWithCircle className='row-[2] col-[1] h-fit absolute right-[calc(50%_+_28px)] mt-48 group-even:hidden smlg:right-[calc(50%_+_48px)] lg:right-[calc(50%_+_100px)]'>Узнать стоимость</ArrowWithCircle>}
+    {isLaptop && <ArrowWithCircle className='row-[2] col-[1] h-fit absolute right-[calc(50%_+_28px)] mt-48 group-even:hidden smlg:right-[calc(50%_+_48px)] lg:right-[calc(50%_+_100px)]'>Find out the cost</ArrowWithCircle>}
   </div>
 };
 
