@@ -2,6 +2,7 @@ import { FC, ReactNode } from 'react';
 import Header from './header/index';
 import localFont from "next/font/local";
 import cn from 'classnames';
+import Footer from './footer';
 
 type Props = {
   children: ReactNode
@@ -53,6 +54,7 @@ const Layout: FC<Props> = ({ children }) => {
     >
       <Header />
       {children}
+      <Footer />
     </div>
   )
 }

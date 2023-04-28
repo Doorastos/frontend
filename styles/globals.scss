@@ -7,7 +7,7 @@
     overflow-x: hidden;
   }
 	body {
-		@apply leading-[1.3] text-black tracking-wide h-[2000vh];
+		@apply leading-[1.3] text-black tracking-wide;
 	}
 	// text-[12px] leading-[1.3] font-light tracking-wide sm:text-[14px] md:text-[16px] lg:text-[18px]
 
@@ -21,7 +21,7 @@
 		@apply text-[14px] md:text-[26px]
 	};
 	h5 {
-		@apply text-[16px] font-light sm:text-[20px] md:text-[24px] lg:text-[28px]
+		@apply text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px]
 	};
 
 	.text-light {
@@ -48,6 +48,12 @@
 	}
 	.text16-24 {
 		@apply text-[16px] md:text-[20px] smlg:text-[24px]
+	}
+	.text14-20 {
+		@apply text-[14px] md:text-[20px]
+	}
+	.text14-18 {
+		@apply text-[14px] esm:text-[18px]
 	}
 	.text14-16 {
 		@apply text-[14px] md:text-[16px]

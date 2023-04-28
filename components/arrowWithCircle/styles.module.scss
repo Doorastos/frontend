@@ -10,8 +10,8 @@ $halfCircleSice: calc($circleSice / 2);
     }
   }
   .line {
-
-    width: calc(100% - $halfCircleSice);
-    right: $halfCircleSice;
+    width: calc(100% - $halfCircleSice + 1px);
+    right: calc($halfCircleSice - 1px);
+    top: calc($halfCircleSice - .25px);
   }
 }

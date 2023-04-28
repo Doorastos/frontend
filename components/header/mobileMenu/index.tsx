@@ -7,7 +7,6 @@ import Image from 'next/image';
 import Link from './link';
 import PopUpLink from './popUpLink';
 import ArrowWithCircle from '@/components/arrowWithCircle/arrowWithCircle';
-import textToURL from '@/helpers/textToURL';
 
 type Props = {
   links: HeaderLinkType[]
@@ -16,7 +15,7 @@ type Props = {
 }
 
 const mobileMenu: FC<Props> = ({ links, isOpen, closeMenu }) => {
-  let Links = links.map((l, index) => textToURL(l.name) !== undefined ? <Link className='mt-4' onClick={closeMenu} {...l} key={index} /> : <PopUpLink onClick={closeMenu} {...l} key={index} />);
+  let Links = links.map((l, index) => l.sublinks ? <PopUpLink onClick={closeMenu} {...l} key={index} /> : <Link className='mt-4' onClick={closeMenu} {...l} key={index} />);
 
   return <div
     className={cn(

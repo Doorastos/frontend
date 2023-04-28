@@ -36,7 +36,7 @@ const links = [
     name: 'Stock',
   },
   {
-    name: 'About production',
+    name: 'About manufacturer',
   },
   {
     name: 'Contacts',
