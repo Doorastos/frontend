@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { HeaderLinkType } from '..';
 import cn from 'classnames';
 import { motion } from 'framer-motion';
-import closeImg from '../../../public/imgs/close.svg';
+import closeImg from '../../../../public/imgs/close.svg';
 import Image from 'next/image';
 import Link from './link';
 import PopUpLink from './popUpLink';
@@ -12,9 +12,10 @@ type Props = {
   links: HeaderLinkType[]
   isOpen: boolean
   closeMenu: () => void
+  openHelpChooseDialog: () => void
 }
 
-const mobileMenu: FC<Props> = ({ links, isOpen, closeMenu }) => {
+const mobileMenu: FC<Props> = ({ links, isOpen, closeMenu, openHelpChooseDialog }) => {
   let Links = links.map((l, index) => l.sublinks ? <PopUpLink onClick={closeMenu} {...l} key={index} /> : <Link className='mt-4' onClick={closeMenu} {...l} key={index} />);
 
   return <div
@@ -25,7 +26,7 @@ const mobileMenu: FC<Props> = ({ links, isOpen, closeMenu }) => {
   >
     <div
       className={cn(
-        'fixed top-0 left-0 w-screen h-screen transition-all bg-black/60',
+        'fixed top-0 -left-1 w-[calc(100vw_+_4px)] h-screen transition-all bg-black/60',
         !isOpen && 'opacity-0 invisible -z-50'
       )}
       onClick={closeMenu}
@@ -41,7 +42,7 @@ const mobileMenu: FC<Props> = ({ links, isOpen, closeMenu }) => {
       <nav className='mt-7'>
         {Links}
       </nav>
-      <ArrowWithCircle className='w-full text-blue1 mt-12' circleSize={30}>Help choose</ArrowWithCircle>
+      <ArrowWithCircle className='text-blue1 mt-12' width='full' onClick={openHelpChooseDialog} circleSize={30}>Help choose</ArrowWithCircle>
     </motion.div>
   </div>
 };

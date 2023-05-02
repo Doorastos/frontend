@@ -1,4 +1,4 @@
-import { CSSProperties, FC, ReactNode } from 'react';
+import { CSSProperties, DetailedHTMLProps, FC, HTMLAttributes, ReactNode } from 'react';
 import cn from 'classnames';
 import ChevronRounded from '../chevronRounded';
 import cls from './styles.module.scss';
@@ -10,13 +10,26 @@ type Props = {
   className?: string
   circleClassName?: string
   signClassName?: string
-}
+  width?: 'full' | 'fit'
+} & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>
 
-const ArrowWithCircle: FC<Props> = ({ children, circleSize = 30, color = 'blue', className, circleClassName, signClassName }) => {
+const ArrowWithCircle: FC<Props> = ({ children, circleSize = 30, color = 'blue', className, circleClassName, signClassName, width = 'fit', ...props }) => {
 
-  return <div className={cn('group cursor-pointer w-fit', cls.arrow, className)}>
+  return <div
+    className={cn(
+      'group cursor-pointer',
+      width === 'fit' ? 'w-fit' : 'w-full',
+      cls.arrow, className,
+    )}
+    {...props}
+  >
     <p className={cn('text-esmLight', signClassName)}>{children}</p>
-    <div className='relative w-[calc(100%_+_3.5em)] -mt-2.5'>
+    <div
+      className={cn(
+        'relative',
+        width === 'fit' ? 'w-[calc(100%_+_3.5em)] -mt-2.5' : 'w-full'
+      )}
+    >
       <span
         className={cn(
           'absolute h-px transition-all',

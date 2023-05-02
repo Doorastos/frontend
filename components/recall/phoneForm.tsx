@@ -24,14 +24,13 @@ const PhoneForm: FC = () => {
       <Form className='grid grid-cols-[54%_1fr] items-center gap-x-12 mt-2.5 esm:gap-x-[90px] sm:gap-x-10 sm:grid-cols-[1fr_max-content]'>
         <div className='flex flex-col gap-y-2.5 col-[1]'>
           <div className='group'>
-            <Field className={cn(
-              'text14 outline-none transition-colors',
-              errors.phone ? 'text-red placeholder:text-red' : 'group-hover:text-grey1',
-            )} placeholder='Phone' type="phone" name="phone" />
-            <span className={cn(
-              'block h-px w-full transition-colors mt-1',
-              errors.phone ? 'bg-red' : 'bg-black group-hover:bg-grey1',
-            )} />
+            <Field
+              className={cn(
+                'text14 h-7 w-full border-b outline-none transition-colors',
+                errors.phone ? 'text-red border-b-red placeholder:text-red' : 'border-b-grey1 group-hover:text-grey1',
+              )}
+              placeholder='Phone' type="phone" name="phone"
+            />
           </div>
           <p className='text-tiny text-grey2'>
             By clicking on the send button, you agree to the terms of

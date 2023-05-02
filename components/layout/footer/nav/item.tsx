@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { FC } from 'react';
-import textToURL from './../../../helpers/textToURL';
+import textToURL from './../../../../helpers/textToURL';
 
 type Props = {
   text: string

@@ -1,10 +1,11 @@
 import Image from 'next/image';
-import logo from '../../public/imgs/logo.svg';
+import logo from '../../../public/imgs/logo.svg';
 import { FC, useState } from 'react';
-import CircledBtn from '../circledBtn';
+import CircledBtn from '../../circledBtn';
 import MobileNav from './mobileMenu/index';
 import Link from 'next/link';
 import Nav from './nav';
+import HelpChooseDialog from '@/components/dialogs/helpChooseDialog';
 
 export type HeaderLinkType = {
   name: string
@@ -46,6 +47,12 @@ const links = [
 const Header: FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const handleMobileModalStatus = () => setIsMobileMenuOpen(prev => !prev);
+  
+  const [isHelpChooseDialogOpen, setIsHelpChooseDialogOpen] = useState(false);
+  const handleHelpChooseDialogStatus = (isOpen: boolean) => {
+    setIsMobileMenuOpen(false);
+    setIsHelpChooseDialogOpen(isOpen);
+  };
 
   return <header className='mainContainer fixed top-0 left-1/2 -translate-x-1/2 w-full flex justify-between items-center z-40'>
     <Link href='/'>
@@ -73,7 +80,9 @@ const Header: FC = () => {
       isOpen={isMobileMenuOpen}
       closeMenu={handleMobileModalStatus}
       links={links}
+      openHelpChooseDialog={() => handleHelpChooseDialogStatus(true)}
     />
+    <HelpChooseDialog open={isHelpChooseDialogOpen} onOpenChange={handleHelpChooseDialogStatus} />
   </header>
 };
 
