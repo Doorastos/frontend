@@ -72,7 +72,7 @@ const Header: FC = () => {
     <CircledBtn
       className='text-small bg-black/60 w-[160px] h-[160px] text-white -mt-10 hover:bg-black/80 max-smlg:hidden'
       textClassName='smlg:mt-10'
-      onClick={handleMobileModalStatus}
+      onClick={() => handleHelpChooseDialogStatus(true)}
     >
       Help choose
     </CircledBtn>
