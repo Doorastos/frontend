@@ -13,14 +13,14 @@ const PopUpLink: FC<Props> = ({ name, sublinks }) => {
 
   return <div className='relative group'>
     <div className='group cursor-pointer'>
-      <p className='flex items-center gap-x-1.5 text-grey4 transition-colors group-hover:text-white'>
+      <p className='flex items-center gap-x-1.5 text-grey1 transition-colors group-hover:text-grey2'>
         {name}
         <svg className='mt-1' width="7" height="6" viewBox="0 0 7 6" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M3.5 6L0.468911 0.75L6.53109 0.75L3.5 6Z" fill="#C7C7C7" />
         </svg>
       </p>
     </div>
-    <div className={cn('flex flex-col gap-y-2 w-fit whitespace-nowrap absolute top-10 left-0 transition-all opacity-0 invisible group-hover:opacity-100 group-hover:visible')}>
+    <div className={cn('flex flex-col gap-y-2 w-fit whitespace-nowrap absolute top-10 left-0 bg-white transition-all opacity-0 invisible p-2 pt-0 group-hover:opacity-100 group-hover:visible')}>
       <span className='absolute -top-5 w-full h-5' />
       {Sublinks}
     </div>

@@ -26,7 +26,7 @@ const MainPage: React.FC = () => {
       <QualityDifferences />
       <AdditionalSecurity />
       <Reviews />
-      <Recall />
+      <Recall className='mt130-300 max-w-[710px] ml-auto' />
     </main>
   </>
 }

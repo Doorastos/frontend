@@ -13,8 +13,7 @@ const Accordion: FC<Props> = ({ className, items }) => {
 
   return <RadixAccordion.Root
     className={cn("flex flex-col w-full divide-y divide-line last:border-b last:border-line", className)}
-    type="single"
-    collapsible
+    type="multiple"
   >
     {Items}
   </RadixAccordion.Root>

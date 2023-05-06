@@ -51,7 +51,7 @@ const Item: FC<Props> = ({ heading, img, subheading, description, isExpandable, 
         </button>
       }
     </div>
-    {isLaptop && <ArrowWithCircle className='row-[2] col-[1] h-fit absolute right-[calc(50%_+_28px)] mt-48 group-even:hidden smlg:right-[calc(50%_+_48px)] lg:right-[calc(50%_+_100px)]'>Find out the cost</ArrowWithCircle>}
+    {isLaptop && <ArrowWithCircle className='row-[2] col-[1] h-fit absolute right-[calc(50%_+_28px_+_3.5em)] mt-48 group-even:hidden smlg:right-[calc(50%_+_48px_+_3.5em)] lg:right-[calc(50%_+_100px_+_3.5em)]'>Find out the cost</ArrowWithCircle>}
   </div>
 };
 

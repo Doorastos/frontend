@@ -3,13 +3,18 @@
 @tailwind utilities;
 
 @layer base {
+	html, body, #__next {
+		@apply min-h-screen
+	}
 	html, body {
     overflow-x: hidden;
   }
 	body {
-		@apply leading-[1.3] text-black tracking-wide h-[2000vh];
+		@apply leading-[1.3] text-black tracking-wide;
 	}
-	// text-[12px] leading-[1.3] font-light tracking-wide sm:text-[14px] md:text-[16px] lg:text-[18px]
+	main {
+		flex: 1 0 auto;
+	}
 
 	h2 {
 		@apply text-[20px] leading-[1.2] md:text-[36px]
@@ -21,36 +26,42 @@
 		@apply text-[14px] md:text-[26px]
 	};
 	h5 {
-		@apply text-[16px] font-light sm:text-[20px] md:text-[24px] lg:text-[28px]
+		@apply text-[16px] sm:text-[20px] md:text-[24px] lg:text-[28px]
 	};
 
 	.text-light {
-		@apply text-[16px] font-light sm:text-[18px]
+		@apply text-[16px] font-light esm:text-[18px]
 	}
 	.text-small {
 		@apply text-[12px] esm:text-[14px] md:text-[16px]
 	}
 	.text-esm { //extra small
-		@apply text-grey1 text-[12px] md:text-[14px]
+		@apply text-grey1 text-[12px] esm:text-[14px]
 	}
 	.text-esmLight { //extra small light
-		@apply text-[12px] font-light tracking-wider md:text-[14px]
+		@apply text-[12px] font-light tracking-wider esm:text-[14px]
 	}
 	.text-tiny {
-		@apply text-[10px] tracking-wider sm:text-[12px]
+		@apply text-[10px] tracking-wider esm:text-[12px]
 	}
 
 	.text20-30 {
 		@apply text-[20px] esm:text-[24px] md:text-[30px]
 	}
 	.text18-24 {
-		@apply text-[18px] md:text-[20px] smlg:text-[24px]
+		@apply text-[18px] esm:text-[20px] smlg:text-[24px]
 	}
 	.text16-24 {
-		@apply text-[16px] md:text-[20px] smlg:text-[24px]
+		@apply text-[16px] esm:text-[20px] smlg:text-[24px]
+	}
+	.text14-20 {
+		@apply text-[14px] esm:text-[20px]
+	}
+	.text14-18 {
+		@apply text-[14px] esm:text-[18px]
 	}
 	.text14-16 {
-		@apply text-[14px] md:text-[16px]
+		@apply text-[14px] esm:text-[16px]
 	}
 	.text14 {
 		@apply text-[14px]
@@ -63,10 +74,10 @@
 		@apply mt-32 esm:mt-36 smlg:mt-[200px]
 	}
 	.mt50-150 {
-		@apply mt-12 md:mt-[150px]
+		@apply mt-12 esm:mt-[150px]
 	}
 	.mt40-50 {
-		@apply mt-10 md:mt-[50px]
+		@apply mt-10 esm:mt-[50px]
 	}
 	.mt10-20 {
 		@apply mt-2.5 md:mt-5

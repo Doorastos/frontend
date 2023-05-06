@@ -14,7 +14,7 @@ const Advantage: FC<Props> = ({ text }) => {
     `}
   >
     <span
-      className='block w-12 h-px bg-line esm:bg-grey1 md:w-2.5 md:h-2.5 md:rounded-full md:bg-grey2 md:absolute md:left-1/2 md:-translate-x-1/2'
+      className='block w-12 h-px bg-line md:w-2.5 md:h-2.5 md:rounded-full md:bg-grey2 md:absolute md:left-1/2 md:-translate-x-1/2'
     />
     <p className='text-black text-[12px] esm:text-grey4 max-md:mt-1 smlg:text-[14px]'>{text}</p>
   </div>
