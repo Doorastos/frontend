@@ -4,7 +4,7 @@
 
 @layer base {
 	html, body, #__next {
-		@apply h-full
+		@apply min-h-screen
 	}
 	html, body {
     overflow-x: hidden;
@@ -14,7 +14,6 @@
 	}
 	main {
 		flex: 1 0 auto;
-		margin-top: 150px
 	}
 
 	h2 {

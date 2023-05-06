@@ -3,16 +3,16 @@ import cn from 'classnames';
 import CircledBtn from '../circledBtn';
 import { useCookies } from 'react-cookie';
 
-const yearInSeconds = 365 * 24 * 60 * 60;
-
 const CookiesNotification: FC = () => {
   const [cookies, setCookie] = useCookies(['areCookiesAccepted']);
-  const [isClosed, setIsClosed] = useState(true); //for some unexpected for me reasons without the useState and useEffect the component shows updated data in the console and not refreshes the component
+  const [isClosed, setIsClosed] = useState(true); //for some unexpected for me reasons, without the useState and useEffect the component shows updated data in the console and not refreshes the component
 
   const handleAcceptedStatus = () => {
+    let cd = new Date(); //current date
+
     setCookie('areCookiesAccepted', true, {
       path: '/',
-      expires: new Date(Date.now() + yearInSeconds)
+      expires: new Date(`${cd.getFullYear() + 1}-${cd.getMonth()}-${cd.getDate()} 00:00:00`),
     });
     
     setIsClosed(true);
