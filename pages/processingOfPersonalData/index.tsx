@@ -26,7 +26,7 @@ const ProcessingOfPersonalDataPage: FC = () => {
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
-    <main className='mt-40'>
+    <main>
       <Breadcrumbs items={breadcrumbsItems} />
       <div className='flex flex-col gap-y-5 leading-[30px]'>
         {Items}

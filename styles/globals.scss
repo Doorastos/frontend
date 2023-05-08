@@ -13,6 +13,7 @@
 		@apply leading-[1.3] text-black tracking-wide;
 	}
 	main {
+		@apply mt-28 md:mt-36;
 		flex: 1 0 auto;
 	}
 

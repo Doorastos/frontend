@@ -1,14 +1,9 @@
 import { FC } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
-import Item from './item';
+import Item, { ItemType } from './item';
 
 type Props = {
   setStage: () => void
-}
-
-export type ItemType = {
-  startPoint: number
-  endPoint: number | null
 }
 
 const ranges = [

@@ -55,7 +55,7 @@ const Header: FC = () => {
   };
 
   return <header className='mainContainer fixed top-0 left-1/2 -translate-x-1/2 w-full flex justify-between items-center z-40 pb-1.5'>
-    <div className='absolute w-[200vw] h-full -left-[100vw] top-0 bg-white -z-[1]' />
+    <div className='absolute w-[200vw] h-full -left-[100vw] top-0 bg-white -z-[1] max-smlg:hidden' />
     <Link href='/'>
       <Image
         src={logo}

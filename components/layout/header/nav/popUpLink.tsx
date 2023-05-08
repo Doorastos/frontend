@@ -15,8 +15,8 @@ const PopUpLink: FC<Props> = ({ name, sublinks }) => {
     <div className='group cursor-pointer'>
       <p className='flex items-center gap-x-1.5 text-grey1 transition-colors group-hover:text-grey2'>
         {name}
-        <svg className='mt-1' width="7" height="6" viewBox="0 0 7 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M3.5 6L0.468911 0.75L6.53109 0.75L3.5 6Z" fill="#C7C7C7" />
+        <svg className='fill-grey1 transition-colors mt-1 group-hover:fill-grey2' width="7" height="6" viewBox="0 0 7 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3.5 6L0.468911 0.75L6.53109 0.75L3.5 6Z" />
         </svg>
       </p>
     </div>

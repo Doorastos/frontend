@@ -1,5 +1,9 @@
 import { FC } from 'react';
-import { ItemType } from '.';
+
+export type ItemType = {
+  startPoint: number
+  endPoint: number | null
+}
 
 type Props = {
   onClick: () => void

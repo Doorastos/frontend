@@ -1,15 +1,16 @@
-import { FC, ReactNode } from 'react';
+import { FC } from 'react';
 import cn from 'classnames';
 import { motion, MotionProps } from 'framer-motion';
+import Item, { TextsItemType } from './item';
 
 type Props = {
-  items: string[]
+  items: TextsItemType[]
   className?: string
   itemClassName?: string
 } & MotionProps
 
 const Texts: FC<Props> = ({ items, className, itemClassName, ...props }) => {
-  let Items = items.map((i, index) => <p className={cn('text-esm text-grey1', itemClassName)} key={index}>{i}</p>);
+  let Items = items.map((i, index) => <Item {...i} className={itemClassName} key={index} />);
 
   return <motion.div className={cn('flex flex-col gap-y-2.5', className)} {...props}>
     {Items}
