@@ -4,10 +4,36 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { FC, useEffect, useState } from "react";
 import Settings from "./settings";
+import StartPriceFrom from "./settings/startPriceFrom";
+import { ActiveCategoryItemType } from "./settings/filter/categories/item";
 
 const CatalogPage: FC = () => {
   const router = useRouter();
   const [breadcrumbsItems, setBreadcrumbsItems] = useState<BreadcrumbsItemType[]>([]);
+  const [startPriceFromItem, setStartPriceFromItem] = useState<string | null>(null);
+  const [activeSecurityItem, setActiveSecurityItem] = useState<string | null>(null);
+  const [activeCategoryItems, setActiveCategoryItems] = useState<ActiveCategoryItemType[]>([]);
+
+  const setActiveCategoryItem = (category: string, newItems: string[]) => {
+    let categoryIndex = activeCategoryItems.findIndex(c => c.category === category);
+
+    if (categoryIndex !== -1) {
+      setActiveCategoryItems(prev => {
+        let copy = [...prev];
+        copy[categoryIndex].items = newItems;
+
+        return copy;
+      })
+    } else {
+      setActiveCategoryItems(prev => [
+        ...prev,
+        {
+          category: category,
+          items: newItems
+        }
+      ]);
+    }
+  };
 
   useEffect(() => {
     let whereQuery = router.query?.where;
@@ -35,7 +61,18 @@ const CatalogPage: FC = () => {
     </Head>
     <main>
       <Breadcrumbs items={breadcrumbsItems} />
-      <Settings activeLink={router.query?.where} />
+      <Settings
+        activeLink={router.query?.where}
+        activeSecurityItem={activeSecurityItem}
+        setActiveSecurityItem={setActiveSecurityItem}
+        activeCategoryItems={activeCategoryItems}
+        setActiveCategoryItem={setActiveCategoryItem}
+
+      />
+      <StartPriceFrom
+        activeItem={startPriceFromItem}
+        setActiveItem={setStartPriceFromItem}
+      />
     </main>
   </>
 }

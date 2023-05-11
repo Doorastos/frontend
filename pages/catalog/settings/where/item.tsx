@@ -11,7 +11,7 @@ type Props = {
 const Item: FC<Props> = ({ children, where, activeLink }) => {
   return <Link
     className={cn(
-      'text-esm w-full text-center transition-colors py-2.5 active:bg-black active:text-white',
+      'text-esm w-full text-center transition-colors p-2.5 active:bg-black active:text-white',
       activeLink === where ? 'bg-black text-white' : 'bg-line text-black hover:bg-grey4',
     )}
     href={{ pathname: '/catalog', query: `where=${where}` }}

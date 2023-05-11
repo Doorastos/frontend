@@ -1,7 +1,7 @@
 import * as Accordion from '@radix-ui/react-accordion';
 import { FC } from 'react';
 import ArrowDown from '../icons/ArrowDown';
-import Texts from '../Texts';
+import Texts from '../texts';
 
 type DefaultItemPropertiesType = {
   heading: string

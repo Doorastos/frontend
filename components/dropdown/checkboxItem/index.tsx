@@ -1,7 +1,6 @@
 import { FC, useState } from 'react';
-import InfoIcon from '../../icons/infoIcon';
 import Checkbox from '../../checkbox';
-import AdditionalInfoDialog, { AdditionalInfoType } from './additionalInfoDialog';
+import AdditionalInfoDialog, { AdditionalInfoType } from '../../dialogs/additionalInfoDialog';
 
 export type DropdownCheckboxItemType = {
   text: string
@@ -17,17 +16,12 @@ const CheckboxItem: FC<Props> = ({ text, isActive, onClick, info }) => {
   const [isAIDOpen, setIsAIDOpen] = useState(false); //AID - additional item dialog
   const handleAIDStatus = () => setIsAIDOpen(prev => !prev);
 
-  let id = `checkboxItem-${text}`;
-
-  return <div className='flex items-center justify-between w-full'>
+  return <div className='grid grid-cols-[1fr_max-content] items-center w-full'>
     <div className='group flex items-center gap-x-2 w-full' onClick={onClick}>
       <Checkbox checked={isActive} />
-      <label className='text-[12px] text-grey1 cursor-pointer w-full group-hover:text-black group-active:text-black' htmlFor={id}>{text}</label>
+      <label className='text-[12px] text-grey1 cursor-pointer text-left w-full group-hover:text-black group-active:text-black'>{text}</label>
     </div>
-    {info && <>
-      <InfoIcon className='hover:fill-grey2 active:fill-blue1' onClick={handleAIDStatus} />
-      <AdditionalInfoDialog open={isAIDOpen} onOpenChange={status => setIsAIDOpen(status)} heading={text} {...info} />
-    </>}
+    {info && <AdditionalInfoDialog open={isAIDOpen} onOpenChange={status => setIsAIDOpen(status)} openDialog={handleAIDStatus} heading={text} {...info} />}
   </div>
 };
 
