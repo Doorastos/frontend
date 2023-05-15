@@ -6,12 +6,13 @@ import useResize from '@/hooks/useResize';
 import SecurityProperties from './securityProperties';
 import Categories from './categories';
 import { ActiveCategoryItemType } from './categories/item';
+import { SecurityItemType } from '../..';
 
 type Props = {
-  activeSecurityItem: string | null
-  setActiveSecurityItem: Dispatch<SetStateAction<string | null>>
+  activeSecurityItem: SecurityItemType
+  setActiveSecurityItem: Dispatch<SetStateAction<SecurityItemType>>
   activeCategoryItems: ActiveCategoryItemType[]
-  setActiveCategoryItem: (category: string, newItems: string[]) => void
+  setActiveCategoryItem: (category: ActiveCategoryItemType['category'], newItems: string[]) => void
 }
 
 const Filter: FC<Props> = ({ activeSecurityItem, setActiveSecurityItem, activeCategoryItems, setActiveCategoryItem }) => {

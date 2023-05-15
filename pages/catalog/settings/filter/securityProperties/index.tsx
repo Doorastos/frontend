@@ -3,10 +3,12 @@ import withThermalBreakImg from '../../../../../public/imgs/pages/catalog/settin
 import tamperproofImg from '../../../../../public/imgs/pages/catalog/settings/filter/additionalSecurity/tamperproof.webp';
 import armoredImg from '../../../../../public/imgs/pages/catalog/settings/filter/additionalSecurity/armored.webp';
 import Item from './item';
+import { SecurityItemType } from '@/pages/catalog';
+import { ProductType } from '@/redux/reducers/static';
 
 const securityProperties = [
   {
-    text: 'With thermal break',
+    text: 'With thermal break' as ProductType['security'],
     info: {
       img: withThermalBreakImg,
       texts: [
@@ -25,7 +27,7 @@ const securityProperties = [
     }
   },
   {
-    text: 'Tamperproof',
+    text: 'Tamperproof' as ProductType['security'],
     info: {
       img: tamperproofImg,
       texts: [
@@ -37,7 +39,7 @@ const securityProperties = [
     }
   },
   {
-    text: 'Armored',
+    text: 'Armored' as ProductType['security'],
     info: {
       img: armoredImg,
       texts: [
@@ -54,8 +56,8 @@ const securityProperties = [
 ]
 
 type Props = {
-  activeItem: string | null
-  setActiveItem: Dispatch<SetStateAction<string | null>>
+  activeItem: SecurityItemType
+  setActiveItem: Dispatch<SetStateAction<SecurityItemType>>
 }
 
 const SecurityProperties: FC<Props> = ({ activeItem, setActiveItem }) => {

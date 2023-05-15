@@ -3,7 +3,7 @@ import { DropdownCheckboxItemType } from '@/components/dropdown/checkboxItem';
 import { Dispatch, FC, SetStateAction } from 'react';
 
 export type ActiveCategoryItemType = {
-  category: string
+  category: 'price' | 'finishing' | 'color'
   items: string[]
 }
 
@@ -13,7 +13,7 @@ type Props = {
   setExpandedItem: Dispatch<SetStateAction<string | null>>
   items: DropdownCheckboxItemType[]
   activeItems: ActiveCategoryItemType[]
-  setActiveItem: (category: string, newItems: string[]) => void
+  setActiveItem: (category: ActiveCategoryItemType['category'], newItems: string[]) => void
 }
 
 const Item: FC<Props> = ({ defaultItem, expandedItem, setExpandedItem, items, activeItems, setActiveItem }) => {
@@ -22,8 +22,8 @@ const Item: FC<Props> = ({ defaultItem, expandedItem, setExpandedItem, items, ac
     isExpanded={expandedItem === defaultItem}
     setIsExpanded={setExpandedItem}
     items={items}
-    activeItems={activeItems.find(i => i.category === defaultItem)?.items || []}
-    setActiveItem={setActiveItem}
+    activeItems={activeItems.find(i => i.category === defaultItem.toLowerCase())?.items || []}
+    setActiveItem={setActiveItem as (category: string, newItems: string[]) => void} // it's unnecessary to be strict here
   />
 };
 

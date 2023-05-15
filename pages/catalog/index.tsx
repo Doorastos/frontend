@@ -6,34 +6,54 @@ import { FC, useEffect, useState } from "react";
 import Settings from "./settings";
 import StartPriceFrom from "./settings/startPriceFrom";
 import { ActiveCategoryItemType } from "./settings/filter/categories/item";
+import Products from "./products";
+import { ProductType } from "@/redux/reducers/static";
+import { useSelector } from "react-redux";
+import { selectProductItems } from "@/redux/selectors";
+
+export type PriceFromType = ('Ascending' | 'Descending') | null
+export type SecurityItemType = ProductType['security'] | null
 
 const CatalogPage: FC = () => {
   const router = useRouter();
+  const products = useSelector(selectProductItems);
   const [breadcrumbsItems, setBreadcrumbsItems] = useState<BreadcrumbsItemType[]>([]);
-  const [startPriceFromItem, setStartPriceFromItem] = useState<string | null>(null);
-  const [activeSecurityItem, setActiveSecurityItem] = useState<string | null>(null);
+  const [startPriceFromItem, setStartPriceFromItem] = useState<PriceFromType>(null);
+  const [activeSecurityItem, setActiveSecurityItem] = useState<SecurityItemType>(null);
   const [activeCategoryItems, setActiveCategoryItems] = useState<ActiveCategoryItemType[]>([]);
 
-  const setActiveCategoryItem = (category: string, newItems: string[]) => {
+  const resetSettings = () => {
+    setBreadcrumbsItems(prev => prev.filter(i => !i.href?.includes('?where')));
+    setStartPriceFromItem(null);
+    setActiveSecurityItem(null);
+    setActiveCategoryItems([]);
+  };
+  const setActiveCategoryItem = (category: ActiveCategoryItemType['category'], newItems: string[]) => {
     let categoryIndex = activeCategoryItems.findIndex(c => c.category === category);
 
     if (categoryIndex !== -1) {
       setActiveCategoryItems(prev => {
         let copy = [...prev];
-        copy[categoryIndex].items = newItems;
 
+        if (newItems.length !== 0) {
+          copy[categoryIndex].items = newItems;
+        } else {
+          copy = copy.filter(i => i.category !== category);
+        };
+        
         return copy;
       })
     } else {
       setActiveCategoryItems(prev => [
         ...prev,
         {
-          category: category,
+          category,
           items: newItems
         }
       ]);
     }
   };
+  let whereItem = breadcrumbsItems.find(i => i.href?.includes('where'))?.href?.replace('?where=', '') as (ProductType['where'] | undefined);
 
   useEffect(() => {
     let whereQuery = router.query?.where;
@@ -62,16 +82,24 @@ const CatalogPage: FC = () => {
     <main>
       <Breadcrumbs items={breadcrumbsItems} />
       <Settings
+        resetSettings={resetSettings}
         activeLink={router.query?.where}
         activeSecurityItem={activeSecurityItem}
         setActiveSecurityItem={setActiveSecurityItem}
         activeCategoryItems={activeCategoryItems}
         setActiveCategoryItem={setActiveCategoryItem}
-
       />
       <StartPriceFrom
         activeItem={startPriceFromItem}
         setActiveItem={setStartPriceFromItem}
+      />
+      <Products
+        itemsPerPage={1}
+        allItems={products}
+        activeSecurityItem={activeSecurityItem}
+        startPriceFromItem={startPriceFromItem}
+        whereItem={whereItem}
+        activeCategoryItems={activeCategoryItems}
       />
     </main>
   </>

@@ -10,7 +10,7 @@ type Props = {
 
 //in order to properly render the component after screen changing, a parent component must have a useResize hook
 
-const Pagination: FC<Props> = ({ portionsCount, className, windowWidth, currentPortion, ...props }) => {
+const SliderPagination: FC<Props> = ({ portionsCount, className, windowWidth, currentPortion, ...props }) => {
   const ref = useRef<HTMLDivElement>(null);
 
   let Lines = Array.from(Array(portionsCount).keys())
@@ -25,4 +25,4 @@ const Pagination: FC<Props> = ({ portionsCount, className, windowWidth, currentP
   </div>
 };
 
-export default Pagination;
+export default SliderPagination;

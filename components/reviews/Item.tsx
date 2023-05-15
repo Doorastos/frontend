@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Image from 'next/image';
 import ChevronRounded from '../chevronRounded';
-import Pagination from '../pagination';
+import SliderPagination from '../sliderPagination';
 
 type Props = {
   img: string
@@ -21,7 +21,7 @@ const Item: FC<Props> = ({ img, personName, review, setNewPage, windowWidth, cur
       <ChevronRounded className='w-14 h-14' disabled={currentPortion === 0} chevronClassName='rotate-180' onClick={() => setNewPage('prev')} height={18} />
       <ChevronRounded className='w-14 h-14' disabled={currentPortion === portionsCount - 1} onClick={() => setNewPage('next')} height={18} />
     </div>
-    <Pagination className='col-[1] row-[2] max-md:mt-2.5 md:col-[2] md:max-w-[190px]' windowWidth={windowWidth} currentPortion={currentPortion} portionsCount={portionsCount} />
+    <SliderPagination className='col-[1] row-[2] max-md:mt-2.5 md:col-[2] md:max-w-[190px]' windowWidth={windowWidth} currentPortion={currentPortion} portionsCount={portionsCount} />
     <div className='col-[1/3] max-md:mt-5 md:col-[2/4] md:row-[1]'>
       <h6 className='text16-24'>{personName}</h6>
       <p className='mt10-20 text-esm text-grey2'>{review}</p>

@@ -2,12 +2,14 @@ import Checkbox from '@/components/checkbox';
 import AdditionalInfoDialog, { AdditionalInfoType } from '@/components/dialogs/additionalInfoDialog';
 import { Dispatch, FC, SetStateAction, useState } from 'react';
 import cn from 'classnames';
+import { SecurityItemType } from '@/pages/catalog';
+import { ProductType } from '@/redux/reducers/static';
 
 type Props = {
-  text: string;
+  text: ProductType['security'];
   info: AdditionalInfoType
-  activeItem: string | null
-  setActive: Dispatch<SetStateAction<string | null>>
+  activeItem: SecurityItemType
+  setActive: Dispatch<SetStateAction<SecurityItemType>>
 }
 
 const Item: FC<Props> = ({ text, info, activeItem, setActive }) => {

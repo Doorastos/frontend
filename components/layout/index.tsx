@@ -1,9 +1,12 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, useEffect } from 'react';
 import localFont from "next/font/local";
 import cn from 'classnames';
 import CookiesNotification from './cookiesNotification';
 import Footer from './footer';
 import Header from './header';
+import { useDispatch } from 'react-redux';
+import { fetchProducts } from '@/redux/reducers/static';
+import {ThunkDispatch} from "@reduxjs/toolkit";
 
 type Props = {
   children: ReactNode
@@ -49,16 +52,21 @@ const sfProDisplayFont = localFont({
 });
 
 const Layout: FC<Props> = ({ children }) => {
-  return (
-      <div
-        className={cn('mainContainer font-sfProDisplay flex flex-col min-h-screen', robodronFont.variable, sfProDisplayFont.variable)}
-      >
-        <Header />
-        {children}
-        <Footer />
+  const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, []);
 
-        <CookiesNotification />
-      </div>
+  return (
+    <div
+      className={cn('mainContainer font-sfProDisplay flex flex-col min-h-screen', robodronFont.variable, sfProDisplayFont.variable)}
+    >
+      <Header />
+      {children}
+      <Footer />
+
+      <CookiesNotification />
+    </div>
   )
 }
 

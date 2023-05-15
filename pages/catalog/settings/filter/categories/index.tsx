@@ -8,7 +8,7 @@ import Item, { ActiveCategoryItemType } from './item';
 
 type Props = {
   activeItems: ActiveCategoryItemType[]
-  setActiveItem: (category: string, newItems: string[]) => void
+  setActiveItem: (category: ActiveCategoryItemType['category'], newItems: string[]) => void
 }
 
 const items = [
@@ -98,25 +98,25 @@ const items = [
     defaultItem: 'Color',
     items: [
       {
-        text: 'Венге',
+        text: 'Wenge',
       },
       {
-        text: 'Белые',
+        text: 'White',
       },
       {
-        text: 'Черные',
+        text: 'Black',
       },
       {
-        text: 'Темные',
+        text: 'Dark',
       },
       {
-        text: 'Светлые',
+        text: 'Light',
       },
       {
-        text: 'Красные',
+        text: 'Reds',
       },
       {
-        text: 'Зеленые',
+        text: 'Greens',
       }
     ]
   },

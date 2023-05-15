@@ -7,10 +7,10 @@ import FourthStage from './stages/fourth';
 import DialogBase from '../dialogBase';
 
 type Props = {
-
+  initialStage?: 1 | 2 | 3 | 4
 } & Dialog.DialogProps
 
-const HelpChooseDialog: FC<Props> = ({ open, ...props }) => {
+const HelpChooseDialog: FC<Props> = ({ open, initialStage, ...props }) => {
   const [stage, setStage] = useState(1);
   const handleStage = () => setStage(prev => prev + 1);
 
@@ -19,6 +19,12 @@ const HelpChooseDialog: FC<Props> = ({ open, ...props }) => {
       setStage(1);
     };
   }, [open, setStage]);
+
+  useEffect(() => {
+    if (initialStage !== undefined && stage < initialStage) {
+      setStage(initialStage);
+    };
+  }, [initialStage, stage]);
 
   const Stages = [
     <FirstStage setStage={handleStage} />,

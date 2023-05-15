@@ -21,9 +21,9 @@ const Dropdown: FC<DropdownProps> = ({ defaultItem, activeItems, setActiveItem, 
   };
   const handleItemClick = (item: string) => {
     if (activeItems.includes(item)) {
-      setActiveItem(defaultItem, activeItems.filter(fi => fi !== item));
+      setActiveItem(defaultItem.toLowerCase(), activeItems.filter(fi => fi !== item));
     } else {
-      setActiveItem(defaultItem, [...activeItems, item]);
+      setActiveItem(defaultItem.toLowerCase(), [...activeItems, item]);
     };
   };
  
