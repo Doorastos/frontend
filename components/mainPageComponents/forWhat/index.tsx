@@ -15,7 +15,7 @@ const items = [
     className: '[&>div>p]:max-w-[16.75em] esm:col-[2] esm:row-[1/3] esm:[&>img]:min-h-[320px] esm:[&>img]:max-w-[600px] md:[&>div>p]:max-w-[16.6em]',
   },
   {
-    heading: 'For home',
+    heading: 'For house',
     description: 'Warm doors with a thermal break, designed to warm and delight with aesthetics',
     img: {
       src: forHouseImg,
