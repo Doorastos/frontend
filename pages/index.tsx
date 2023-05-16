@@ -4,9 +4,9 @@ import CompanyName from '@/components/mainPageComponents/companyName';
 import ForWhat from '@/components/mainPageComponents/forWhat';
 import Hero from '@/components/mainPageComponents/hero';
 import QualityDifferences from '@/components/mainPageComponents/qualityDifferences';
-import UniqueOffer from '@/components/mainPageComponents/uniqueOffer';
 import Recall from '@/components/recall';
 import Reviews from '@/components/reviews';
+import UniqueOffer from '@/components/uniqueOffers';
 import Head from 'next/head'
 
 const MainPage: React.FC = () => {

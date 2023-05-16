@@ -10,6 +10,7 @@ import Products from "./products";
 import { ProductType } from "@/redux/reducers/static";
 import { useSelector } from "react-redux";
 import { selectProductItems } from "@/redux/selectors";
+import UniqueOffer from "@/components/uniqueOffers";
 
 export type PriceFromType = ('Ascending' | 'Descending') | null
 export type SecurityItemType = ProductType['security'] | null
@@ -94,13 +95,14 @@ const CatalogPage: FC = () => {
         setActiveItem={setStartPriceFromItem}
       />
       <Products
-        itemsPerPage={1}
+        itemsPerPage={3}
         allItems={products}
         activeSecurityItem={activeSecurityItem}
         startPriceFromItem={startPriceFromItem}
         whereItem={whereItem}
         activeCategoryItems={activeCategoryItems}
       />
+      <UniqueOffer />
     </main>
   </>
 }
