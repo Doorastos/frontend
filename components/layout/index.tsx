@@ -1,12 +1,11 @@
-import { FC, ReactNode, useEffect } from 'react';
+import { FC, ReactNode } from 'react';
 import localFont from "next/font/local";
 import cn from 'classnames';
 import CookiesNotification from './cookiesNotification';
 import Footer from './footer';
 import Header from './header';
-import { useDispatch } from 'react-redux';
-import { fetchProducts } from '@/redux/reducers/static';
-import {ThunkDispatch} from "@reduxjs/toolkit";
+import InitializationScreen from './InitializationScreen';
+import useAppInitialization from '@/hooks/useAppInitialization';
 
 type Props = {
   children: ReactNode
@@ -52,22 +51,22 @@ const sfProDisplayFont = localFont({
 });
 
 const Layout: FC<Props> = ({ children }) => {
-  const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
-  useEffect(() => {
-    dispatch(fetchProducts());
-  }, []);
+  let isAppLoaded = useAppInitialization();
 
-  return (
-    <div
-      className={cn('mainContainer font-sfProDisplay flex flex-col min-h-screen', robodronFont.variable, sfProDisplayFont.variable)}
-    >
-      <Header />
-      {children}
-      <Footer />
+  return <div
+    className={cn('mainContainer font-sfProDisplay flex flex-col min-h-screen', robodronFont.variable, sfProDisplayFont.variable)}
+  >
+    {isAppLoaded
+      ? <>
+        <Header />
+        {children}
+        <Footer />
 
-      <CookiesNotification />
-    </div>
-  )
+        <CookiesNotification />
+      </>
+      : <InitializationScreen />
+    }
+  </div>
 }
 
 export default Layout;
