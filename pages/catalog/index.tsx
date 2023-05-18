@@ -76,7 +76,7 @@ const CatalogPage: FC = () => {
   return <>
     <Head>
       <title>Catalog | Doorastos</title>
-      <meta name="description" content="Catalog" />
+      <meta name="description" content="Doorastos - catalog page" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/favicon.ico" />
     </Head>
