@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { Component, Dispatch, FC, SetStateAction, useEffect, useRef, useState } from 'react';
 import ReactPaginate, { ReactPaginateProps } from 'react-paginate';
 import Arrow from './arrow';
 import useResize from '@/hooks/useResize';
@@ -7,9 +7,11 @@ type Props = {
   items: object[]
   setItems: (items: object[]) => void
   itemsPerPage: number
+  isReset?: boolean
+  setIsReset?: Dispatch<SetStateAction<boolean>>
 }
 
-const Pagination: FC<Props> = ({ items, setItems, itemsPerPage }) => {
+const Pagination: FC<Props> = ({ items, setItems, itemsPerPage, isReset, setIsReset }) => {
   let windowWidth = useResize();
   const [itemOffset, setItemOffset] = useState(0);
 
@@ -26,6 +28,10 @@ const Pagination: FC<Props> = ({ items, setItems, itemsPerPage }) => {
     setItems(currentItems);
   }, [itemOffset]);
 
+  useEffect(() => {
+    setIsReset && setIsReset(false);
+  }, [isReset, setIsReset]);
+
   return <ReactPaginate
     className='flex items-center justify-between w-full max-w-[500px] mx-auto mt-20'
     pageClassName='text-esm text-grey2 transition-colors hover:text-grey1'
@@ -39,6 +45,7 @@ const Pagination: FC<Props> = ({ items, setItems, itemsPerPage }) => {
     pageCount={pageCount}
     previousLabel={<Arrow className='-rotate-90' />}
     renderOnZeroPageCount={null}
+    forcePage={isReset ? 0 : undefined}
   />
 };
 

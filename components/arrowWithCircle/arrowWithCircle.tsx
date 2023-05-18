@@ -26,8 +26,8 @@ const ArrowWithCircle: FC<Props> = ({ children, circleSize = 30, color = 'blue',
     <p className={cn('text-esmLight', signClassName)}>{children}</p>
     <div
       className={cn(
-        'relative',
-        width === 'fit' ? 'w-[calc(100%_+_3.5em)] -mt-2.5' : 'w-full'
+        'relative -mt-2.5',
+        width === 'fit' ? 'w-[calc(100%_+_3.5em)]' : 'w-full'
       )}
     >
       <span

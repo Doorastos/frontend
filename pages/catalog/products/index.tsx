@@ -1,6 +1,4 @@
-import { selectProductItems } from '@/redux/selectors';
-import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { FC, useEffect, useState } from 'react';
 import Item from './item';
 import NothingFound from './nothingFound';
 import { ProductType } from '@/redux/reducers/static';
@@ -21,6 +19,7 @@ type Props = {
 const Products: FC<Props> = ({ itemsPerPage, allItems, activeSecurityItem, startPriceFromItem, whereItem, activeCategoryItems }) => {
   const [items, setItems] = useState<ProductType[]>(allItems); //filtred items
   const [itemsPortion, setItemsPortion] = useState<ProductType[]>(items); //portion of filtred items
+  const [isPaginationReset, setIsPaginationReset] = useState(false);
 
   let Items = itemsPortion.map((i) => <Item {...i} key={i.id} />);
 
@@ -56,10 +55,12 @@ const Products: FC<Props> = ({ itemsPerPage, allItems, activeSecurityItem, start
     }) : filtredByWhere;
 
     setItems(filtredByCategoryItems);
+    setIsPaginationReset(true);
   }, [allItems, activeSecurityItem, startPriceFromItem, whereItem, activeCategoryItems]);
 
   useEffect(() => {
     setItemsPortion(items.slice(0, itemsPerPage));
+    setIsPaginationReset(true);
   }, [items.length]);
 
   if (items.length === 0) {
@@ -77,6 +78,8 @@ const Products: FC<Props> = ({ itemsPerPage, allItems, activeSecurityItem, start
       items={items}
       setItems={(items) => setItemsPortion(items as ProductType[])}
       itemsPerPage={itemsPerPage}
+      isReset={isPaginationReset}
+      setIsReset={setIsPaginationReset}
     />
   </div>
 };

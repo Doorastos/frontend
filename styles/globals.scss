@@ -55,6 +55,9 @@
 	.text16-24 {
 		@apply text-[16px] esm:text-[20px] smlg:text-[24px]
 	}
+	.text14-24 {
+		@apply text-[16px] esm:text-[18px] md:text-[20px] smlg:text-[24px]
+	}
 	.text16-20 {
 		@apply text-[16px] esm:text-[20px]
 	}
@@ -67,6 +70,9 @@
 	.text14-16 {
 		@apply text-[14px] esm:text-[16px]
 	}
+	.text12-16 {
+		@apply text-[12px] esm:text-[14px] md:text-[16px]
+	}
 	.text14 {
 		@apply text-[14px]
 	}
@@ -76,6 +82,9 @@
 	}
 	.mt130-200 {
 		@apply mt-32 esm:mt-36 smlg:mt-[200px]
+	}
+	.mt100-150 {
+		@apply mt-[100px] md:mt-[150px]
 	}
 	.mt50-150 {
 		@apply mt-12 esm:mt-[150px]
