@@ -171,7 +171,7 @@ const PrivacyPolicy: FC = () => {
 
   return <>
     <Head>
-      <title>Privacy policy - Doorastos</title>
+      <title>Privacy policy | Doorastos</title>
       <meta name="description" content="Privacy policy" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <link rel="icon" href="/favicon.ico" />
