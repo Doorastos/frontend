@@ -2,10 +2,11 @@ import { FC } from 'react';
 import * as RadixAccordion from '@radix-ui/react-accordion';
 import cn from 'classnames';
 import Item, { AccordionItemType } from './item';
+import { TextsItemType } from '../texts/item';
 
 type Props = {
   className?: string
-  items: AccordionItemType[]
+  items: TextsItemType[]
 }
 
 const Accordion: FC<Props> = ({ className, items }) => {

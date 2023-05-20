@@ -64,7 +64,7 @@ const SecurityProperties: FC<Props> = ({ activeItem, setActiveItem }) => {
 
   let Items = securityProperties.map((i, index) => <Item activeItem={activeItem} setActive={setActiveItem} {...i} key={index} />);
 
-  return <div className='flex gap-y-5 max-smlg:flex-col smlg:gap-x-2.5 lg:gap-x-4'>
+  return <div className='grid gap-y-5 smlg:grid-cols-[max-content_1fr_1fr] smlg:gap-x-2.5 lg:grid-cols-[40%_1fr_1fr] lg:gap-x-4'>
     {Items}
   </div>
 };
