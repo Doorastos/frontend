@@ -33,15 +33,15 @@ const Pagination: FC<Props> = ({ items, setItems, itemsPerPage, isReset, setIsRe
   }, [isReset, setIsReset]);
 
   return <ReactPaginate
-    className='flex items-center justify-between w-full max-w-[500px] mx-auto mt-20'
+    className='flex items-center gap-x-4 w-fit mx-auto mt-20 esm:gap-x-8'
     pageClassName='text-esm text-grey2 transition-colors hover:text-grey1'
     activeClassName='font-bold [&>a]:text-black'
     disabledClassName='opacity-70 pointer-events-none'
     breakLabel={<p className='text-grey2 transition-colors hover:text-grey1'>...</p>}
     nextLabel={<Arrow className='rotate-90' />}
     onPageChange={handlePageClick}
-    pageRangeDisplayed={windowWidth > 540 ? 5 : 3}
-    marginPagesDisplayed={windowWidth > 540 ? 3 : 1}
+    pageRangeDisplayed={windowWidth > 768 ? 5 : 3}
+    marginPagesDisplayed={windowWidth > 768 ? 3 : 1}
     pageCount={pageCount}
     previousLabel={<Arrow className='-rotate-90' />}
     renderOnZeroPageCount={null}

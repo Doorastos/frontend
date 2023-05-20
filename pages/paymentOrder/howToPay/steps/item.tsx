@@ -13,7 +13,7 @@ const Item: FC<Props> = ({ text, id }) => {
     'first:md:pl-0 first:md:pr-2.5'
   )}>
     <span className='text-[16px] font-bold text-blue1'>0{id}</span>
-    <p className='text-esm'>{text}</p>
+    <p className='text-esm text-justify'>{text}</p>
   </div>
 };
 

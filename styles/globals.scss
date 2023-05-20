@@ -70,6 +70,12 @@
 	.text14-16 {
 		@apply text-[14px] esm:text-[16px]
 	}
+	.text12-20 {
+		@apply text-[12px] esm:text-[14px] md:text-[20px]
+	}
+	.text10-18 {
+		@apply text-[10px] esm:text-[12px] md:text-[18px]
+	}
 	.text12-16 {
 		@apply text-[12px] esm:text-[14px] md:text-[16px]
 	}
