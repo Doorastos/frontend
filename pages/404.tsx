@@ -17,8 +17,8 @@ const NotFound: FC = () => {
           <h3 className='text18-24 mt-5'>Page is not found</h3>
           <p className='text-esm text-grey2 text-center max-w-[18em]'>You are here because the requested page does not exist or has been moved to a different address</p>
         </div>
-        <Link className='group border-y border-blue1 w-fit py-2.5 px-5 mt-12 mx-auto' href='/'>
-          <span className='text-blue1 text-[18px] text-light transition-colors hover:text-blue2'>Back to home</span>
+        <Link className='group border border-x-transparent border-blue1 w-fit transition-colors py-2.5 px-5 mt-12 mx-auto hover:border-x-blue2 hover:border-y-transparent' href='/'>
+          <span className='text-blue1 text-[18px] text-light transition-colors group-hover:text-blue2'>Back to home</span>
         </Link>
       </section>
     </main>
