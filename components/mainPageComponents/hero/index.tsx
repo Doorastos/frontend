@@ -25,7 +25,7 @@ const Hero: FC = () => {
       </div>
     </div>
     <div className='relative grid esm:grid-cols-[repeat(2,max-content)] esm:gap-x-10 esm:gap-y-2.5 md:grid-cols-[repeat(4,max-content)] md:gap-x-0 md:justify-between'>
-      <span className='absolute top-0 -left-[calc((100vw_-_100%)_/_2)] w-screen bg-grey2 h-px max-md:hidden' />
+      <span className='leftContainer absolute top-0 w-screen bg-grey2 h-px max-md:hidden' />
       {Advantages}
     </div>
   </section>

@@ -7,6 +7,7 @@ import Header from './header';
 import InitializationScreen from './InitializationScreen';
 import useAppInitialization from '@/hooks/useAppInitialization';
 import { ArrowUp } from './arrowUp';
+import { DisabledInternetWarning } from './disabledInternetWarning';
 
 type Props = {
   children: ReactNode
@@ -63,6 +64,7 @@ const Layout: FC<Props> = ({ children }) => {
 
     <CookiesNotification />
     <ArrowUp />
+    <DisabledInternetWarning />
     {!isAppLoaded && <InitializationScreen />}
   </div>
 }

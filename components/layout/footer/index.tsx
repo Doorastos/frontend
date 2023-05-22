@@ -7,8 +7,8 @@ const Footer: FC = () => {
   let currentYear = new Date().getFullYear();
 
   return <footer className='mt130-200 relative grid justify-start pt-7 pb-5 esm:grid-cols-2 esm:grid-rows-[repeat(4,max-content)] esm:pt-14 esm:pb-10 smlg:grid-cols-[max-content_1fr_max-content] smlg:grid-rows-[repeat(2,max-content)] smlg:items-center smlg:gap-y-12 smlg:pt-[75px]'>
-    <div className='absolute -left-[calc((100vw_-_100%)_/_2)] top-0 w-screen h-full max-w-[100vw] bg-black -z-20' />
-    <h6 className='text14-20 text-grey1 font-bold tracking-widest font-robodron'>Expert</h6>
+    <div className='leftContainer absolute top-0 w-screen h-full max-w-[100vw] bg-black -z-20' />
+    <h6 className='text14-20 text-grey2 font-bold tracking-widest font-robodron'>Expert</h6>
     <div className='flex flex-col gap-y-1 max-esm:mt-5 esm:gap-y-2.5 esm:ml-auto smlg:col-[3]'>
       <a className='text14-18 font-light text-white' href='tel:8 800 666 666 66'>8 800 666 666 66</a>
       <p className='text-grey2 text-[12px] esm:text-[14px]'>The call is free</p>

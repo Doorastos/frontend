@@ -12,7 +12,7 @@ const Hero: FC = () => {
   };
 
   return <section className='relative py-16 md:py-36'>
-    <div className='absolute -left-[calc((100vw_-_100%)_/_2)] top-0 w-screen h-full max-w-[100vw] bg-black -z-20' />
+    <div className='leftContainer absolute top-0 w-screen h-full max-w-[100vw] bg-black -z-20' />
     <div className='max-esm:max-w-[69%]'>
       <div className='flex flex-col gap-y-2.5'>
         <h6 className='text14-24 text-white esm:max-w-[18em] xl:max-w-[25em]'>Delivery and installation of Expert entrance doors is carried out in Moscow and Moscow region</h6>
