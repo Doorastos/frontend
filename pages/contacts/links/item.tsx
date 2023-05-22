@@ -14,7 +14,7 @@ const Item: FC<ItemProps> = ({ heading, items }) => {
     ? items
     : items.map((i, index) => {
       return i.href
-        ? <Link className='text10-18 text-blue1 w-fit border-b border-blue1' href={i.href} key={index}>{i.text}</Link>
+        ? <Link className='text10-18 text-blue1 w-fit transition-all border-b border-transparent hover:border-blue1' href={i.href} key={index}>{i.text}</Link>
         : <p className='text10-18 w-fit' key={index}>{i.text}</p>
     });
 

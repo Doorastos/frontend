@@ -6,6 +6,7 @@ import Footer from './footer';
 import Header from './header';
 import InitializationScreen from './InitializationScreen';
 import useAppInitialization from '@/hooks/useAppInitialization';
+import { ArrowUp } from './arrowUp';
 
 type Props = {
   children: ReactNode
@@ -61,6 +62,7 @@ const Layout: FC<Props> = ({ children }) => {
     <Footer />
 
     <CookiesNotification />
+    <ArrowUp />
     {!isAppLoaded && <InitializationScreen />}
   </div>
 }
